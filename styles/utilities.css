@@ -1,0 +1,32 @@
+/* ===========================================
+   UTILITIES
+=========================================== */
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fade {
+  opacity: 0;
+  transition: opacity .35s ease;
+}
+
+.show {
+  opacity: 1;
+}
+
+.number-font {
+  font-family: var(--font-number);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.glass {
+  background: var(--color-surface-glass);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.08);
+}

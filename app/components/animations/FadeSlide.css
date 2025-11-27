@@ -1,0 +1,27 @@
+.fade-slide-wrapper {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity .55s ease-out, transform .55s cubic-bezier(.2,.9,.25,1);
+}
+
+.fade-slide-wrapper.fade-slide-in {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.fade-item {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: fadeItemUp 0.45s forwards cubic-bezier(.2,.9,.25,1);
+}
+
+@keyframes fadeItemUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

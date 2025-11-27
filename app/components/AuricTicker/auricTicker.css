@@ -1,0 +1,46 @@
+.ticker-wrap {
+  width: 100%;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 8px 0;
+  white-space: nowrap;
+}
+
+.ticker {
+  display: inline-flex;
+  animation: scroll 22s linear infinite;
+  gap: 40px;
+}
+
+.ticker-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.symbol {
+  font-weight: 600;
+}
+
+.price {
+  opacity: 0.7;
+}
+
+.change.up {
+  color: #4cff81;
+}
+
+.change.down {
+  color: #ff4976;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}

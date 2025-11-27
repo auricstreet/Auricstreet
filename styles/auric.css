@@ -1,0 +1,170 @@
+
+/* ----------------------- */
+/* PART 2 -AURIC COSMIC BREATH*/
+/* ----------------------- */
+/* Creates tiny floating gold particles. Very lightweight. */
+
+.cosmic-breath {
+  animation: breathPulse 8s ease-in-out infinite;
+}
+
+@keyframes breathPulse {
+  0% { transform: scale(1); filter: brightness(100%); }
+  50% { transform: scale(1.01); filter: brightness(102%); }
+  100% { transform: scale(1); filter: brightness(100%); }
+}
+
+
+/* ----------------------- */
+/* DARK MATTER DUST EFFECT */
+/* ----------------------- */
+/* Creates tiny floating gold particles. Very lightweight. */
+
+.auric-dust {
+  background-image: radial-gradient(
+      rgba(255,255,255,0.05) 1px,
+      transparent 1px
+    ),
+    radial-gradient(
+      rgba(255,255,255,0.04) 1px,
+      transparent 1px
+    );
+  background-size: 3px 3px, 4px 4px;
+  background-position: 0 0, 2px 2px;
+  opacity: 0.14;
+
+  /* Slow upward drift for realism */
+  animation: dustFloat 28s linear infinite;
+}
+
+@keyframes dustFloat {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-90px); }
+}
+
+/* ----------------------- */
+/* AURIC ECLIPSE PASS */
+/* ----------------------- */
+/* Slow-moving radial shadow + golden halo giving cosmic depth. */
+
+.auric-eclipse {
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(0,0,0,0.28),
+    rgba(0,0,0,0.05) 60%,
+    transparent 70%
+  );
+  opacity: 0;
+
+  /* 64s = very slow cinematic movement */
+  animation: eclipseMove 64s ease-in-out infinite;
+}
+
+@keyframes eclipseMove {
+  0% { opacity: 0; transform: translate3d(-40%, -20%, 0); }
+  10% { opacity: 0.22; transform: translate3d(20%, 10%, 0); }
+  20% { opacity: 0.35; transform: translate3d(50%, 40%, 0); }
+  30% { opacity: 0.12; transform: translate3d(70%, 60%, 0); }
+  40% { opacity: 0; transform: translate3d(100%, 80%, 0); }
+  100% { opacity: 0; transform: translate3d(-40%, -20%, 0); }
+}
+/* ---------------------------- */
+/* DIMENSIONAL TEAR FLICKER */
+/* ---------------------------- */
+/* A fast golden slit appears for 0.3 seconds, then disappears. */
+
+.auric-tear {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+/* The flashing tear itself */
+.auric-tear::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 3px;
+  height: 100%;
+
+  /* Glowing vertical energy line */
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(255,255,255,0.6),
+    rgba(212,175,55,0.8),
+    transparent
+  );
+
+  transform: translateX(-50%);
+  opacity: 0;
+  filter: blur(2px);
+
+  /* Slow loop → rare flicker */
+  animation: tearFlash 58s infinite;
+}
+
+@keyframes tearFlash {
+  /* invisible most of the time */
+  0%, 98%, 100% { opacity: 0; }
+
+  /* sudden flash */
+  50% { opacity: 1; }
+
+  /* back to invisible instantly */
+  50.4% { opacity: 0; }
+}
+/* ---------------------------- */
+/* ANOMALY LIGHT FLY-BY */
+/* ---------------------------- */
+/* A fast diagonal golden streak — subtle alien movement. */
+
+.auric-anomaly::after {
+  content: "";
+  position: absolute;
+
+  /* Length of streak */
+  width: 140px;
+  height: 4px;
+
+  top: 40%;
+  left: -20%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,215,130,0.85),
+    rgba(255,255,255,0.9),
+    transparent
+  );
+
+  filter: blur(6px);
+  opacity: 0;
+
+  /* Rare flyby animation */
+  animation: anomalyFly 110s infinite;
+}
+
+@keyframes anomalyFly {
+  /* Invisible at start */
+  0%, 45% {
+    opacity: 0;
+    transform: translateX(0) translateY(0) rotate(12deg);
+  }
+
+  /* Appears */
+  46% { opacity: 1; }
+
+  /* Flies across screen */
+  49% {
+    transform: translateX(180%) translateY(-40%) rotate(12deg);
+    opacity: 1;
+  }
+
+  /* Disappears */
+  50% { opacity: 0; }
+
+  /* Stays invisible */
+  100% { opacity: 0; }
+}

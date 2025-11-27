@@ -1,0 +1,188 @@
+/* ================================
+   PLANET CORE (Position + Glow)
+================================ */
+
+.auric-planet-container {
+  position: absolute;
+  top: 110px;
+
+  /* Perfect alignment relative to text column */
+  left: calc(50% + 220px);
+
+  width: 420px;
+  height: 420px;
+
+  pointer-events: none;
+  mix-blend-mode: screen;
+  opacity: 0.92;
+
+  animation: planetFloat 7s ease-in-out infinite;
+
+  filter: drop-shadow(0 0 50px rgba(160,190,255,0.45));
+  z-index: 1;
+}
+
+/* Subtle hover motion */
+body:hover .auric-planet-container {
+  transform: translateY(-10px);
+}
+
+/* ================================
+   PLANET SURFACE
+================================ */
+
+.auric-planet {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+
+  background: radial-gradient(circle at 30% 30%, 
+    #ffffff 20%, 
+    #dfe6ff 45%, 
+    #bcc7ea 65%, 
+    #5a6a91 90%, 
+    #1a2235
+  );
+
+  opacity: 0.9;
+  backdrop-filter: blur(6px);
+  position: relative;
+  overflow: hidden;
+
+  box-shadow:
+    inset 0 0 35px rgba(255,255,255,0.6),
+    inset 0 0 80px rgba(170,190,255,0.25),
+    0 0 120px rgba(120,150,255,0.3);
+}
+
+/* Procedural crack pattern */
+.auric-planet::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  
+  background: 
+    repeating-linear-gradient(115deg, transparent 0px, transparent 18px, rgba(255,255,255,0.2) 19px),
+    repeating-linear-gradient(25deg, transparent 0px, transparent 22px, rgba(255,255,255,0.15) 23px);
+
+  opacity: 0.12;
+  mix-blend-mode: overlay;
+}
+
+
+/* ================================
+   RINGS
+================================ */
+
+.auric-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.4px solid rgba(200,210,255,0.28);
+  transform-origin: center;
+
+  filter: drop-shadow(0 0 30px rgba(180,200,255,0.3));
+  animation: ringPulse 6s ease-in-out infinite;
+}
+
+.ring1 {
+  width: 520px;
+  height: 220px;
+  top: 105px;
+  left: -60px;
+  rotate: -14deg;
+}
+
+.ring2 {
+  width: 560px;
+  height: 240px;
+  top: 90px;
+  left: -80px;
+  rotate: -14deg;
+  opacity: 0.18;
+}
+
+
+/* ================================
+   BACKGROUND FX LAYERS
+================================ */
+
+.auric-fog-layer {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05), transparent 70%);
+  filter: blur(60px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.stars-layer {
+  position: fixed;
+  inset: 0;
+  background-image: url("/stars.png");
+  background-size: cover;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.18;
+}
+
+.layer1 { transform: translateZ(-1px) scale(1.2); }
+.layer2 { transform: translateZ(-2px) scale(1.4); opacity: 0.12; }
+.layer3 { transform: translateZ(-3px) scale(1.7); opacity: 0.08; }
+
+.auric-nebula {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1), transparent 70%);
+  mix-blend-mode: screen;
+  z-index: 2;
+  pointer-events: none;
+}
+
+
+/* ================================
+   ANIMATIONS
+================================ */
+
+@keyframes planetFloat {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-18px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes ringPulse {
+  0% { opacity: 0.45; filter: blur(0px); }
+  50% { opacity: 0.75; filter: blur(2px); }
+  100% { opacity: 0.45; filter: blur(0px); }
+}
+
+
+/* ================================
+   RESPONSIVE ADJUSTMENTS
+================================ */
+
+@media (max-width: 1280px) {
+  .auric-planet-container {
+    left: calc(50% + 140px);
+    transform: scale(0.9);
+  }
+}
+
+@media (max-width: 1024px) {
+  .auric-planet-container {
+    left: calc(50% + 40px);
+    transform: scale(0.75);
+    top: 150px;
+  }
+}
+
+@media (max-width: 850px) {
+  .auric-planet-container {
+    left: calc(50% - 40px);
+    transform: scale(0.6);
+    opacity: 0.6;
+    top: 200px;
+  }
+}

@@ -1,0 +1,55 @@
+/* =========================================================
+   GLOBAL ANIMATION CORE
+========================================================= */
+
+/* Fade + Slide */
+.fade-slide {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all .6s cubic-bezier(.2, .9, .25, 1);
+}
+.fade-slide.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Scale In */
+.scale-in {
+  opacity: 0;
+  transform: scale(.92);
+  transition: all .55s cubic-bezier(.25, .9, .2, 1);
+}
+.scale-in.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Blur In */
+.blur-in {
+  opacity: 0;
+  filter: blur(8px);
+  transition: all .65s ease;
+}
+.blur-in.show {
+  opacity: 1;
+  filter: blur(0px);
+}
+
+/* Float on Hover */
+.float-hover {
+  transition: transform .35s cubic-bezier(.25, .9, .2, 1);
+}
+.float-hover:hover {
+  transform: translateY(-6px);
+}
+
+/* Stagger container */
+.stagger > * {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: all .6s cubic-bezier(.2,.9,.25,1);
+}
+.stagger.show > * {
+  opacity: 1;
+  transform: translateY(0);
+}

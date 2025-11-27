@@ -1,0 +1,94 @@
+/* ===========================================
+   COMPONENTS
+=========================================== */
+
+/* ---------- BUTTONS ---------- */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  font-weight: 700;
+  border-radius: 12px;
+  background: linear-gradient(90deg, var(--color-gold-warm), var(--color-gold));
+  color: #000;
+  cursor: pointer;
+  transition: var(--transition-medium);
+  box-shadow: var(--shadow-gold);
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 38px var(--color-gold-soft);
+}
+
+.btn-primary:active {
+  transform: translateY(2px);
+}
+
+
+/* ---------- VALUE CARD ---------- */
+
+.value-card {
+  padding: 26px;
+  border-radius: 16px;
+  transition: .35s ease;
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.value-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  border-color: var(--color-gold-soft);
+  box-shadow: var(--shadow-gold);
+}
+
+
+/* ---------- COMPARISON ---------- */
+
+.comparison-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+
+/* ---------- FAQ ---------- */
+
+.faq-question {
+  width: 100%;
+  padding: 20px;
+  font-family: var(--font-subheading);
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.faq-answer {
+  padding: 0 20px 20px;
+  color: var(--color-text-muted);
+  font-size: 15px;
+}
+
+
+/* ---------- SCROLL ORB ---------- */
+
+.scroll-orb {
+  position: fixed;
+  bottom: 32px;
+  left: 32px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor: pointer;
+  border:1px solid var(--color-gold-soft);
+  background: radial-gradient(circle, var(--color-gold-soft), transparent);
+  box-shadow: 0 0 22px var(--color-gold-soft);
+  z-index: 999;
+}

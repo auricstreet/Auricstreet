@@ -1,0 +1,249 @@
+
+/* ===========================
+   🌀 FOOTER STYLES
+   =========================== */
+
+.footer-container {
+  width: 100%;
+  margin-top: 120px;
+  padding: 60px var(--container-pad) 40px;
+  background: transparent;
+}
+
+.footer-line {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.02),
+    rgba(255,255,255,0.10),
+    rgba(255,255,255,0.02)
+  );
+  margin-bottom: 40px;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.footer-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-title {
+  font-family: var(--heading-font);
+  font-size: 22px;
+  color: #fff;
+}
+
+.footer-subtitle {
+  font-family: var(--subheading-font);
+  font-size: 20px;
+  color: #d4af37;
+  
+  margin-bottom: 12px;
+}
+
+.footer-text {
+  font-family: var(--body-font);
+  font-size: 15px;
+  color: #c7c8cb;
+  line-height: 1.55;
+}
+
+.footer-link {
+  color: #e7e7e7;
+  font-family: var(--body-font);
+  font-size: 18px;
+  transition: 0.25s ease;
+}
+
+.footer-link:hover {
+  color: var(--gold-2);
+}
+
+.footer-credit {
+  margin-top: 50px;
+  text-align: center;
+  color: #b8b9c0;
+  font-size: 15px;
+  font-family: var(--body-font);
+}
+.footer-logo {
+  width: 120px;
+  height: auto;
+  margin:  25px 10px;
+  display: block;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 12px rgba(255, 217, 100, 0.45));
+  transition: 0.3s ease;
+}
+
+.footer-logo:hover {
+  transform: scale(1.06);
+  filter: drop-shadow(0 0 18px rgba(255, 230, 130, 0.7));
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .footer-container {
+    padding: 40px 20px 30px;
+    margin-top: 80px;
+  }
+
+}
+/* Tablet portrait and smaller (≤ 768px) */
+@media (max-width: 768px) {
+  .footer-container,.footer-nav {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+
+
+  .footer-logo {
+    max-width: 110px;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 480px) {
+  .footer-logo {
+    max-width: 95px;
+    margin-bottom: 20px;
+    transform: scale(1.05);
+  }
+
+  .footer-container {
+    padding: 0 10px;
+    text-align: center;
+  }
+
+  .footer-section {
+    text-align: center;
+  }
+}
+@media (max-width: 360px) {
+  .footer-logo {
+    max-width: 80px;
+    margin-bottom: 24px;
+    opacity: 0.95;
+  }
+
+  .footer-container {
+    gap: 20px;
+  }
+}
+.footer-credit {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 15px;
+  opacity: 0.85;
+}
+.footer-logo {
+  animation: fadeInScale 0.6s ease forwards;
+}
+
+@keyframes fadeInScale {
+  from {
+    transform: scale(0.8);
+    opacity: 0.3;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.footer-social {
+
+
+  
+  margin-top: 12px;
+}
+
+.footer-social a i {
+  font-size: 20px;
+  margin-left:15px;
+  color: rgb(255, 255, 255);
+  transition: 0.3s ease;
+  cursor: pointer;
+ 
+}
+
+.footer-social a:hover i {
+  color: #d4af37; /* gold accent */
+  transform: scale(1.25);
+  text-shadow: 0 0 12px rgba(212,175,55,0.6);
+}
+/* ===========================
+   QUICK LINK STYLING
+=========================== */
+
+.footer-nav {
+  color: #cfd3db;
+  font-size: 15px;
+  font-family: var(--body-font);
+  text-decoration: none;
+  position: relative;
+  width: fit-content;
+  transition: color 0.3s ease;
+  margin-bottom: 6px;
+}
+
+/* Hover gold + underline animation */
+.footer-nav::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: #d4af37;
+  transition: width 0.3s ease-in-out;
+}
+
+.footer-nav:hover {
+  color: #d4af37;
+}
+
+.footer-nav:hover::after {
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .footer-nav {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+
+  }
+}
+/* MOBILE FIX: center logo + quick links */
+@media (max-width: 768px) {
+  
+  /* Center all footer blocks */
+  .footer-block {
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Fix QUICK LINKS alignment */
+  .footer-block .footer-nav {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Social icons center already, but ensure container aligns */
+  .footer-social {
+    justify-content: center;
+  }
+}

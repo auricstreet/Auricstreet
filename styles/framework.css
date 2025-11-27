@@ -1,0 +1,22 @@
+/* ===========================================
+   FRAMEWORK LAYER
+   Tailwind + Overrides
+=========================================== */
+
+@import "tailwindcss";
+
+/* Tailwind Override Fixes */
+button, input, textarea {
+  font-family: var(--font-body);
+}
+
+/* Better tap behavior on mobile */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Selection highlight */
+::selection {
+  background: var(--color-gold);
+  color: #000;
+}

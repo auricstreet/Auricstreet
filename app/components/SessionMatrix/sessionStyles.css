@@ -1,0 +1,391 @@
+/* ------------------------------------------------------
+   AURIC SESSION MATRIX — COSMIC + GOLD GLASS STYLES
+   matches your hero, rift, and cosmic theme
+------------------------------------------------------- */
+
+/* SECTION WRAPPER */
+.session-matrix-section {
+  padding-top: 100px;
+  padding-bottom: 80px;
+  text-align: center;
+  width: 100%;
+}
+
+/* TITLE (White + Gold Glow) */
+.session-matrix-title {
+  font-family: var(--heading-font);
+  font-size: 42px;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 0 18px rgba(212, 175, 55, 0.45);
+  margin-bottom: 12px;
+}
+
+/* Subtitle */
+.session-matrix-sub {
+  font-family: var(--body-font);
+  font-size: 16px;
+  color: #cfd4e2;
+  max-width: 660px;
+  margin: 0 auto 48px auto;
+  line-height: 1.6;
+}
+
+/* ------------------------------------------------------
+   SESSION RING WRAPPER
+------------------------------------------------------- */
+.session-ring-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+/* Center wrapper */
+.session-ring-wrapper {
+  position: relative;
+  width: 360px;
+  height: 360px;
+}
+
+/* Outer cosmic glow */
+.session-ring-outer-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 390px;
+  height: 390px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(212, 175, 55, 0.18),
+    rgba(10, 17, 40, 0) 70%
+  );
+  filter: blur(45px);
+  z-index: 1;
+}
+
+/* Main ring */
+.session-ring {
+  position: relative;
+  width: 360px;
+  height: 360px;
+  z-index: 3;
+}
+
+/* Arcs */
+.session-ring-arcs path {
+  fill: none;
+  stroke-width: 9;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Inactive arc */
+.arc-inactive {
+  stroke: rgba(212, 175, 55, 0.15);
+  filter: blur(1px);
+}
+
+/* Active arc — gold glow */
+.arc-active {
+  stroke: rgba(212, 175, 55, 0.85);
+  filter: drop-shadow(0 0 14px rgba(212, 175, 55, 0.8));
+}
+
+/* Pulse overlay for active session */
+.active-session-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 320px;
+  height: 320px;
+  border-radius: 999px;
+  transform: translate(-50%, -50%);
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  animation: auricPulse 4s ease-in-out infinite;
+  z-index: 2;
+}
+
+@keyframes auricPulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.15);
+    opacity: 0.15;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.35;
+  }
+}
+
+/* ------------------------------------------------------
+   SESSION GRID + CARDS
+------------------------------------------------------- */
+.session-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+/* Card */
+.session-card {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.03)
+  );
+  border-radius: 18px;
+  padding: 22px;
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+  transition: all 0.35s ease;
+}
+
+/* Active session card glow */
+.session-card-active {
+  border: 1px solid rgba(212, 175, 55, 0.55);
+  box-shadow: 0 0 28px rgba(212, 175, 55, 0.35),
+    0 0 60px rgba(212, 175, 55, 0.15);
+  transform: translateY(-6px);
+}
+
+/* Card titles */
+.session-card-title {
+  font-family: var(--subheading-font);
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+/* Status tags */
+.status-open {
+  color: #ffd76b;
+  font-size: 15px;
+}
+
+.status-closed {
+  color: #9da4b0;
+  font-size: 15px;
+}
+
+/* Countdown */
+.countdown {
+  margin-top: 6px;
+  font-family: var(--number-font);
+  font-size: 17px;
+  color: #ffffff;
+}
+
+/* Volatility tags */
+.vol-tag {
+  padding: 3px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* Low */
+.vol-low {
+  background: rgba(255, 255, 255, 0.08);
+  color: #dfe3ea;
+}
+
+/* Medium */
+.vol-medium {
+  background: rgba(212, 175, 55, 0.18);
+  color: #f7d78c;
+}
+
+/* High */
+.vol-high {
+  background: rgba(255, 70, 70, 0.28);
+  color: #ff8484;
+  box-shadow: 0 0 18px rgba(255, 70, 70, 0.35);
+}
+
+/* ------------------------------------------------------
+   RESPONSIVE
+------------------------------------------------------- */
+
+@media (max-width: 1000px) {
+  .session-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .session-grid {
+    grid-template-columns: 1fr;
+  }
+  .session-ring-wrapper,
+  .session-ring,
+  .session-ring svg {
+    width: 260px !important;
+    height: 260px !important;
+  }
+}
+/* ------------------------------------------
+   AURIC SESSION MATRIX – GOD-TIER STYLING
+------------------------------------------- */
+
+/* Main wrapper (centers everything) */
+.session-ring-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+/* Outer cosmic glow */
+.session-ring-outer-glow {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(212, 175, 55, 0.06),
+    rgba(0, 0, 0, 0)
+  );
+  filter: blur(40px);
+  z-index: -2;
+}
+
+/* Main ring container */
+.session-ring {
+  width: 360px;
+  height: 360px;
+  position: relative;
+}
+
+/* Arcs (default inactive) */
+.session-arc {
+  fill: none;
+  stroke-width: 6px;
+  transition: stroke 0.4s ease, filter 0.4s ease;
+}
+
+/* Inactive session arc */
+.arc-inactive {
+  stroke: rgba(255, 255, 255, 0.08);
+}
+
+/* Active session arc glow */
+.arc-active {
+  stroke: #d4af37;
+  filter: drop-shadow(0 0 14px rgba(212, 175, 55, 0.6));
+}
+
+/* ------------------------------------------
+   ACTIVE SESSION PULSE RING
+------------------------------------------- */
+
+.active-session-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  border: 2px solid rgba(212, 175, 55, 0.55);
+  transform: translate(-50%, -50%);
+  animation: auricPulse 2.4s ease-out infinite;
+}
+
+@keyframes auricPulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.9;
+  }
+  70% {
+    transform: translate(-50%, -50%) scale(1.35);
+    opacity: 0.15;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.6);
+    opacity: 0;
+  }
+}
+
+/* ------------------------------------------
+   SESSION LABELS AROUND RING
+------------------------------------------- */
+
+.session-label {
+  position: absolute;
+  font-family: var(--heading-font, 'Inter Tight'), sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffffc9;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(255,255,255,0.1);
+  transition: 0.3s ease;
+}
+
+/* Top label (example: Sydney) */
+.top-center {
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Right label (example: Tokyo/Asia) */
+.right-center {
+  right: -110px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Bottom label (example: London) */
+.bottom-center {
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Left label (example: New York) */
+.left-center {
+  left: -75px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* ACTIVE session label glow */
+.session-label-active {
+  color: #d4af37;
+  text-shadow: 
+    0 0 10px rgba(212, 175, 55, 0.85),
+    0 0 25px rgba(212, 175, 55, 0.45);
+  transform: scale(1.08) translateZ(0);
+}
+
+/* Auto-apply glow */
+.session-ring .session-label-active {
+  filter: drop-shadow(0 0 18px rgba(212, 175, 55, 0.8));
+}
+
+/* ------------------------------------------
+   RESPONSIVE
+------------------------------------------- */
+@media (max-width: 500px) {
+  .session-ring {
+    width: 280px;
+    height: 280px;
+  }
+
+  .session-label {
+    font-size: 14px;
+  }
+
+  .right-center { right: -34px; }
+  .left-center { left: -36px; }
+  .top-center { top: -30px; }
+  .bottom-center { bottom: -30px; }
+}

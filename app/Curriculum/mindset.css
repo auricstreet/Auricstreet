@@ -1,0 +1,217 @@
+/* MAIN WRAPPER */
+.mindset-wrapper {
+  max-width: 620px;
+  margin: 80px auto;
+  padding: 20px;
+  color: white;
+}
+
+/* QUESTION CARD */
+.question-card {
+  background: rgba(255,255,255,0.05);
+  padding: 28px;
+  border-radius: 18px;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+}
+
+/* Fade + slide animation */
+.fade-slide {
+  animation: fadeSlide 0.35s ease;
+}
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0px); }
+}
+
+.question-text {
+  font-size: 20px;
+  margin-bottom: 22px;
+}
+
+/* OPTIONS */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.option-btn {
+  background: rgba(255,255,255,0.06);
+  padding: 14px 18px;
+  border-radius: 12px;
+  text-align: left;
+  border: 1px solid rgba(255,255,255,0.08);
+  color: white;
+  transition: 0.25s ease;
+}
+
+.option-btn:hover {
+  background: rgba(212,175,55,0.2);
+  border-color: rgba(212,175,55,0.5);
+  transform: translateY(-2px);
+}
+
+/* PROGRESS */
+.progress {
+  text-align: right;
+  margin-top: 12px;
+  opacity: 0.7;
+  font-size: 14px;
+}
+
+/* RESULT SCREEN */
+.result-screen {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.result-title {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+/* METER WRAPPER */
+.meter-wrapper {
+  position: relative;
+  width: 210px;
+  height: 210px;
+  margin: 0 auto 24px;
+}
+
+/* Behind glow */
+.meter-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(212,175,55,0.25), transparent 70%);
+  filter: blur(40px);
+  z-index: -1;
+}
+
+/* MAIN CIRCLE */
+.meter-circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* FILLED ARC */
+.meter-fill {
+  --p: 0;
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: conic-gradient(#D4AF37 calc(var(--p) * 1%), transparent 0);
+  mask: radial-gradient(circle, transparent 60%, black 61%);
+}
+
+/* VALUE */
+.meter-value {
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--gold, #D4AF37);
+}
+
+/* MESSAGE */
+.result-msg {
+  max-width: 480px;
+  margin: 0 auto 24px;
+  opacity: 0.9;
+  font-size: 16px;
+}
+
+/* CTA BUTTON */
+.result-cta {
+  display: inline-block;
+  padding: 14px 22px;
+  background: linear-gradient(90deg, #C7A546, #D4AF37);
+  color: #041016;
+  border-radius: 12px;
+  font-weight: 700;
+  box-shadow: 0 8px 26px rgba(212,175,55,0.4);
+  transition: 0.25s ease;
+}
+
+.result-cta:hover {
+  transform: translateY(-3px);
+}.curriculum-title {
+  font-size: 38px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #f5e7bb, #d4af37, #f5e7bb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 0px 18px rgba(212, 175, 55, 0.3);
+  animation: glowTitle 4s ease-in-out infinite;
+}
+
+@keyframes glowTitle {
+  0% { filter: brightness(0.9); }
+  50% { filter: brightness(1.4); }
+  100% { filter: brightness(0.9); }
+}
+
+.curriculum-sub {
+  font-size: 17px;
+  opacity: 0.8;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 8px;
+  letter-spacing: 0.5px;
+}
+.auric-heading {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 700;
+  color: #f5d78e;
+  letter-spacing: 1px;
+  text-shadow: 0 0 18px rgba(212, 175, 55, 0.4);
+  position: relative;
+  padding-bottom: 18px;
+}
+
+/* GOD-TIER UNDERLINE PULSE */
+.auric-heading::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 160px;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(212, 175, 55, 1),
+    transparent
+  );
+  border-radius: 6px;
+  box-shadow: 0 0 16px rgba(212, 175, 55, 0.8);
+  animation: auricPulse 2.8s ease-in-out infinite;
+}
+
+@keyframes auricPulse {
+  0% {
+    width: 160px;
+    opacity: 0.9;
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
+  }
+  50% {
+    width: 220px;
+    opacity: 1;
+    box-shadow: 0 0 22px rgba(212, 175, 55, 1);
+  }
+  100% {
+    width: 160px;
+    opacity: 0.9;
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
+  }
+}

@@ -1,0 +1,150 @@
+.quantum-sphere {
+  position: relative;
+  border-radius: 50%;
+  overflow: visible;
+}
+
+/* PLANET CORE — Blue with rotating gradient */
+.planet {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #1a3f8b, #071324 75%);
+  animation: spinPlanet 28s linear infinite;
+  filter: drop-shadow(0 0 22px rgba(0,150,255,0.25));
+}
+
+@keyframes spinPlanet {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* GOLDEN CRACK — simulated with layered gradients */
+.crack {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    conic-gradient(
+      from 140deg,
+      transparent 0deg,
+      rgba(255,220,140,0.45) 10deg,
+      rgba(255,240,180,0.9) 14deg,
+      rgba(255,200,120,0.4) 18deg,
+      transparent 20deg
+    );
+  mix-blend-mode: screen;
+  animation: crackPulse 5s ease-in-out infinite;
+}
+
+@keyframes crackPulse {
+  0% { opacity: 0.2; }
+  50% { opacity: 0.9; }
+  100% { opacity: 0.2; }
+}
+
+/* SOFT OUTER GLOW */
+.glow {
+  position: absolute;
+  inset: -25%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(80,140,255,0.25), transparent 70%);
+  filter: blur(30px);
+  animation: glowPulse 6s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.06); opacity: 0.45; }
+  100% { transform: scale(1); opacity: 0.3; }
+}
+
+/* ORBITAL RING */
+.ring {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 160%; height: 160%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotateX(65deg);
+  border: 2px solid rgba(212,175,55,0.6);
+  box-shadow: 0 0 16px rgba(212,175,55,0.4);
+  animation: ringSpin 18s linear infinite;
+}
+
+@keyframes ringSpin {
+  from { transform: translate(-50%, -50%) rotateX(65deg) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotateX(65deg) rotate(360deg); }
+}
+
+/* COSMIC DUST ILLUSION (using radial blurs) */
+.dust {
+  position: absolute;
+  inset: -15%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 60%, rgba(255,255,255,0.12), transparent 50%),
+              radial-gradient(circle at 70% 35%, rgba(255,255,255,0.1), transparent 55%),
+              radial-gradient(circle at 20% 25%, rgba(255,255,255,0.09), transparent 60%);
+  animation: dustFloat 14s ease-in-out infinite;
+  filter: blur(4px);
+}
+
+@keyframes dustFloat {
+  0% { transform: scale(1) rotate(0deg); opacity: 0.35; }
+  50% { transform: scale(1.1) rotate(18deg); opacity: 0.55; }
+  100% { transform: scale(1) rotate(0deg); opacity: 0.35; }
+}
+/* TWO GOLDEN RINGS — counter rotating */
+.ring1 {
+  border: 2px solid rgba(212,175,55,0.55);
+  animation: ringSpin1 22s linear infinite;
+}
+
+.ring2 {
+  border: 2px solid rgba(255,230,150,0.55);
+  width: 190% !important;
+  height: 190% !important;
+  animation: ringSpin2 32s linear infinite reverse;
+}
+
+@keyframes ringSpin1 {
+  from { transform: translate(-50%, -50%) rotateX(65deg) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotateX(65deg) rotate(360deg); }
+}
+
+@keyframes ringSpin2 {
+  from { transform: translate(-50%, -50%) rotateX(65deg) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotateX(65deg) rotate(-360deg); }
+}
+/* ORBITING MOONS (PURE CSS) */
+.moon {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #d4d4d4, #888);
+  box-shadow: 0 0 10px rgba(255,255,255,0.55);
+}
+
+/* Moon 1 — closer orbit */
+.moon1 {
+  animation: moonOrbit1 30s linear infinite;
+}
+
+@keyframes moonOrbit1 {
+  0%   { transform: rotate(0deg) translateX(160px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(160px) rotate(-360deg); }
+}
+
+/* Moon 2 — wider reverse orbit */
+.moon2 {
+  animation: moonOrbit2 30s linear infinite reverse;
+  opacity: 0.9;
+  width: 18px; height: 18px;
+}
+
+@keyframes moonOrbit2 {
+  0%   { transform: rotate(0deg) translateX(200px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
+}
+

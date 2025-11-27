@@ -1,0 +1,168 @@
+/* ===========================================
+   BASE + TOKENS
+   Premium Token System — Option C
+=========================================== */
+
+/* Root Design Tokens */
+:root {
+
+  /* ---------- COLOR SYSTEM ---------- */
+  --color-bg-primary: #05060A;
+  --color-bg-secondary: #081126;
+
+  --color-surface: rgba(255,255,255,0.06);
+  --color-surface-glass: rgba(255,255,255,0.04);
+
+  --color-text: #ffffff;
+  --color-text-muted: #b6bcc5;
+
+  /* GOLD TIERS (confirmed) */
+  --color-gold: #D4AF37;
+  --color-gold-soft: rgba(212,175,55,0.45);
+  --color-gold-warm: #c7a546;
+
+  /* SHADOW + DEPTH */
+  --shadow-soft: 0 8px 22px rgba(0,0,0,0.45);
+  --shadow-gold: 0 0 22px rgba(212,175,55,0.45);
+
+  /* TYPOGRAPHY */
+  --font-heading: "Sohne Breit Bold", "Space Grotesk", sans-serif;
+  --font-subheading: "Sohne Mittel", "Space Grotesk", sans-serif;
+  --font-body: "Sohne Buch", "Inter", sans-serif;
+  --font-number: "Inter", monospace;
+
+  /* RADII */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+
+  /* MOTION */
+  --transition-fast: .25s ease;
+  --transition-medium: .45s ease;
+  --transition-slow: .85s ease;
+}
+
+
+/* ===========================================
+   FONT FACE (KEPT CLEAN)
+=========================================== */
+
+@font-face{
+  font-family: "Sohne-Bold";
+  src: url("/fonts/Sohne-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face{
+  font-family: "Sohne-Book";
+  src: url("/fonts/Sohne-Book.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===========================================
+   RESET + GLOBAL
+=========================================== */
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  background: var(--color-bg-primary);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img, video {
+  max-width: 100%;
+  display: block;
+}
+
+/* Container standard */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 18px;
+}
+
+/* ===========================================
+   TYPOGRAPHY SCALES
+=========================================== */
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-heading);
+  margin: 0;
+}
+
+h1 { font-size: clamp(34px, 5vw, 56px); }
+h2 { font-size: clamp(26px, 4vw, 42px); }
+h3 { font-size: clamp(20px, 3vw, 32px); }
+
+
+
+
+
+
+
+
+
+
+/* BACKGROUND ORB */
+.quantum-orb {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, #43320a, #1a1405, #000000);
+  box-shadow:
+    0 0 200px rgba(255, 210, 100, 0.22),
+    inset 0 0 80px rgba(255, 200, 90, 0.3);
+  animation: orb-rotate 25s linear infinite;
+  filter: blur(14px);
+  z-index: -1;
+}
+
+@keyframes orb-rotate {
+  0% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+  100% { transform: translate(-50%, -50%) rotate(360deg) scale(1); }
+}
+
+/* STARFIELD */
+.starfield {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -2;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 50%;
+  animation: twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.6); }
+}

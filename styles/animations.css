@@ -1,0 +1,83 @@
+/* styles/animations.css
+   Keyframes & reusable animation classes
+*/
+
+/* Preloader - eye blink */
+@keyframes eye-pop {
+  0% { transform: scale(0.6) rotate(-6deg); opacity: 0; filter: blur(6px); }
+  35% { transform: scale(1.05) rotate(0deg); opacity: 1; filter: blur(0px); }
+  65% { transform: scale(0.98) rotate(0deg); opacity: 1; }
+  100% { transform: scale(0.9) rotate(2deg); opacity: 0; }
+}
+
+/* Gold shimmer sweep */
+@keyframes gold-sweep {
+  0% { transform: translateX(-110%); opacity: 0; }
+  20% { opacity: 0.35; }
+  50% { transform: translateX(0%); opacity: 0.9; }
+  100% { transform: translateX(110%); opacity: 0; }
+}
+
+/* subtle float for cards */
+@keyframes floaty {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+/* glow pulse (for CTA) */
+@keyframes glow {
+  0% { box-shadow: 0 0 0 rgba(212,175,55,0.0); }
+  50% { box-shadow: 0 12px 40px rgba(212,175,55,0.12); }
+  100% { box-shadow: 0 0 0 rgba(212,175,55,0.0); }
+}
+
+/* small fade-up */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0px); }
+}
+
+/* reusable classes */
+.fade-up { animation: fade-up .7s cubic-bezier(.2,.9,.2,1) both; }
+.float-slow { animation: floaty 6s ease-in-out infinite; }
+.glow-pulse { animation: glow 2.6s ease-in-out infinite; }
+
+/* ===========================================
+   ANIMATIONS — Consolidated
+=========================================== */
+
+/* Floating */
+@keyframes floatOrb {
+  0% { transform: translate(0,0) scale(.8); opacity:.45; }
+  50% { transform: translate(-50px,-40px) scale(1.1); opacity:.75; }
+  100% { transform: translate(0,0) scale(.8); opacity:.45; }
+}
+
+/* Cursor Halo Breathing */
+@keyframes auric-aura-breathe {
+  0% { transform: scale(.98); opacity:.78; }
+  50% { transform: scale(1.05); opacity:.92; }
+  100% { transform: scale(.98); opacity:.78; }
+}
+
+/* Specular Shine */
+@keyframes auric-specular-sway {
+  0% { transform: translate(-25%,-25%) rotate(-5deg); opacity:.85; }
+  50% { transform: translate(-25%,-25%) rotate(5deg) scale(1.05); opacity:1; }
+  100% { transform: translate(-25%,-25%) rotate(-5deg); opacity:.85; }
+}
+
+/* Gold Pulse */
+@keyframes pulse {
+  0% { transform:scale(.8); opacity:.45; }
+  50% { transform:scale(1.25); opacity:.1; }
+  100% { transform:scale(.8); opacity:.45; }
+}
+
+/* Ripple FX (Hero) */
+@keyframes ripple {
+  0% { transform: scale(.4); opacity:.4; }
+  60% { transform: scale(3); opacity:.08; }
+  100% { transform: scale(4); opacity:0; }
+}

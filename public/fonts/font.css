@@ -1,0 +1,28 @@
+/* SÖHNE FONT-FAMILIES — replace src paths with your purchased fonts 
+
+@font-face {
+  font-family: "Sohne Breit Bold";
+  src: url("/fonts/Sohne-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sohne Mittel";
+  src: url("/fonts/Sohne-Mittel.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sohne Buch";
+  src: url("/fonts/Sohne-Buch.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+*/
+/* FALLBACK FONTS (premium) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');

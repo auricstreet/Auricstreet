@@ -1,0 +1,341 @@
+/* ---------------------------------------------------------
+   AURIC STREET — ABOUT PAGE GOD-TIER STYLING
+---------------------------------------------------------- */
+
+/* Full page wrapper */
+.about-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  padding: 120px 20px;
+  color: #ffffffd9;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 20%, #0b0f17, #05060a 70%);
+}
+
+/* ---------------------------------------------------------
+   HOLOGRAM TITLE
+---------------------------------------------------------- */
+.about-title {
+  text-align: center;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  margin-bottom: 60px;
+  font-family: var(--heading-font);
+  position: relative;
+  z-index: 5;
+}
+
+/* Hologram shimmer */
+.hologram-text {
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.6),
+    rgba(255,255,255,1),
+    rgba(255,255,255,0.6)
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: holoMove 4s linear infinite;
+}
+
+@keyframes holoMove {
+  0% { background-position: 0% }
+  100% { background-position: 200% }
+}
+
+/* ---------------------------------------------------------
+   PLANET + SATURN RINGS
+---------------------------------------------------------- */
+
+.planet-container {
+  position: relative;
+  width: 360px;
+  height: 360px;
+  margin: 0 auto 80px auto;
+  transform-style: preserve-3d;
+  animation: planetTilt 12s ease-in-out infinite alternate;
+}
+
+@keyframes planetTilt {
+  0% { transform: rotateX(14deg) rotateY(-6deg); }
+  100% { transform: rotateX(16deg) rotateY(6deg); }
+}
+
+/* Planet Core - Platinum cracked texture using multi-layer gradients */
+.planet-core {
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(255,255,255,0.25) 0px,
+      rgba(255,255,255,0.28) 3px,
+      rgba(255,255,255,0.05) 6px
+    ),
+    radial-gradient(circle at 30% 30%, #ffffff, #b7bcc6 60%, #777d87 100%);
+  
+  box-shadow:
+    0 0 40px rgba(255,255,255,0.15),
+    inset 0 0 60px rgba(255,255,255,0.2);
+
+  animation: planetSpin 38s linear infinite;
+}
+
+@keyframes planetSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+/* Saturn Rings */
+.planet-ring {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.9;
+  mix-blend-mode: screen;
+  transform-origin: center;
+}
+
+.ring-1,
+.ring-2,
+.ring-3 {
+  left: -40px;
+  top: 140px;
+  width: 440px;
+  height: 120px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-left-color: transparent;
+  border-right-color: transparent;
+  animation: ringSpin 18s linear infinite;
+}
+
+.ring-2 {
+  transform: scale(1.06);
+  border-color: rgba(255,255,255,0.18);
+  animation-duration: 24s;
+}
+
+.ring-3 {
+  transform: scale(1.12);
+  border-color: rgba(255,255,255,0.1);
+  animation-duration: 30s;
+}
+
+@keyframes ringSpin {
+  0% { transform: rotateZ(0deg) rotateX(64deg); }
+  100% { transform: rotateZ(360deg) rotateX(64deg); }
+}
+
+/* ---------------------------------------------------------
+   DARK-MATTER FOG BEHIND PLANET
+---------------------------------------------------------- */
+
+.planet-fog {
+  position: absolute;
+  top: -40px;
+  left: -40px;
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255,255,255,0.06) 0%,
+    rgba(255,255,255,0.02) 35%,
+    rgba(0,0,0,0.6) 100%
+  );
+  filter: blur(40px);
+  animation: fogFloat 14s ease-in-out infinite alternate;
+}
+
+@keyframes fogFloat {
+  0% { transform: scale(1) translateY(0px); opacity: 0.8; }
+  100% { transform: scale(1.12) translateY(12px); opacity: 0.55; }
+}
+
+/* ---------------------------------------------------------
+   ABOUT TEXT
+---------------------------------------------------------- */
+
+/* ----- Typography System ----- */
+.about-content {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: "Inter", sans-serif;
+  color: rgba(255,255,255,0.90);
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+/* Section headers */
+.section-header {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  letter-spacing: 0.8px;
+
+  background: linear-gradient(to right, #ffffff, #d4d4d4, #ffffff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  animation: shine 4s linear infinite;
+}
+
+@keyframes shine {
+  0% { background-position: 0% }
+  100% { background-position: 200% }
+}
+
+
+/* ----- Divider Line ----- */
+.divider {
+  text-align: center;
+  margin: 45px 0 35px;
+  opacity: 0.5;
+  letter-spacing: 6px;
+  font-size: 0.9rem;
+}
+
+/* Unstyled list */
+.no-list {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 24px 0;
+}
+
+.no-list li {
+  margin: 6px 0;
+  font-size: 18px;
+}
+
+/* Signature */
+.signature {
+  font-size: 20px;
+  margin-top: 40px;
+  opacity: 0.85;
+  white-space: pre-line;
+}
+
+/* ---------------------------------------------------------
+   SCROLL NEBULA EFFECT
+---------------------------------------------------------- */
+
+.scroll-fade {
+  opacity: 0;
+  animation: fadeInScroll 1s ease forwards;
+}
+
+@keyframes fadeInScroll {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.cursor-star {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffffff, #d4d4d4 40%, transparent 70%);
+  box-shadow: 0 0 12px rgba(255,255,255,0.9);
+
+  animation: starFade 1.2s ease-out forwards;
+}
+
+@keyframes starFade {
+  0% { transform: scale(0.4); opacity: 1; }
+  60% { transform: scale(1.4); opacity: 0.6; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+.about-wrapper {
+  --px: 0;
+  --py: 0;
+  transform: translate3d(calc(var(--px) * 4px), calc(var(--py) * 4px), 0);
+  transition: transform 0.05s linear;
+}
+.nebula-fog {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(
+    circle,
+    rgba(255,255,255,0.04),
+    rgba(255,255,255,0.01),
+    transparent 70%
+  );
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  opacity: 0.7;
+  animation: scrollBlink 2s infinite;
+  letter-spacing: 2px;
+}
+
+@keyframes scrollBlink {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+/* ----- Scroll Fade Reveal ----- */
+.about-content p,
+.about-content ul,
+.section-header,
+.divider {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.7s ease;
+}
+
+.reveal-visible {
+  opacity: 1 !important;
+  transform: translateY(0px) !important;
+}
+/* ----- Golden Pulse for Key Lines ----- */
+.pulse-line {
+  position: relative;
+  color: #f5e6b6;
+  font-weight: 600;
+}
+
+.pulse-line::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #f1d27a, #ffe9b0, #f1d27a);
+  border-radius: 2px;
+  animation: goldPulse 2s ease-out 1;
+}
+
+@keyframes goldPulse {
+  0% { transform: scaleX(0); opacity: 0; }
+  40% { transform: scaleX(1.05); opacity: 1; }
+  100% { transform: scaleX(1); opacity: 0.7; }
+}
+
+
+/* ----- Better Lists ----- */
+.no-list li {
+  margin-bottom: 6px;
+  font-size: 1.05rem;
+}

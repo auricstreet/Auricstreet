@@ -1,0 +1,13 @@
+:root{--color-bg-primary:#05060A;--color-bg-secondary:#081126;--color-surface:rgba(255,255,255,.06);--color-surface-glass:rgba(255,255,255,.04);--color-text:#fff;--color-text-muted:#b6bcc5;--color-gold:#D4AF37;--color-gold-soft:rgba(212,175,55,.45);--color-gold-warm:#c7a546;--font-heading:"Sohne Breit Bold","Space Grotesk",sans-serif;--font-body:"Sohne Buch","Inter",sans-serif;--transition-fast:.25s;--radius-md:14px}
+*{box-sizing:border-box}html,body{margin:0;padding:0;width:100%;overflow-x:hidden;background:#05060A;color:#fff;font-family:var(--font-body)}
+a{text-decoration:none;color:inherit}
+.navbar{position:sticky;top:0;z-index:900;display:flex;justify-content:space-between;padding:18px 26px;background:rgba(8,12,20,.55);backdrop-filter:blur(12px)}
+.hero{min-height:86vh;display:flex;justify-content:space-between;gap:36px;padding:80px 26px}
+.btn-primary{padding:14px 22px;border-radius:12px;background:linear-gradient(90deg,#c7a546,#D4AF37);color:#000;transition:.45s;cursor:pointer}
+.btn-primary:hover{transform:translateY(-4px);box-shadow:0 0 30px rgba(212,175,55,.45)}
+.value-card{padding:26px;border-radius:16px;background:rgba(255,255,255,.07);transition:.4s}
+.value-card:hover{transform:scale(1.05);border-color:rgba(212,175,55,.45)}
+.comparison-card{background:rgba(255,255,255,.07);backdrop-filter:blur(16px);padding:40px;border-radius:20px}
+.timeline::before{content:"";position:absolute;left:50%;width:3px;background:linear-gradient(180deg,#D4AF37,#c7a546,transparent);transform:translateX(-50%)}
+.scroll-orb{position:fixed;bottom:32px;left:32px;width:60px;height:60px;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.45),transparent);cursor:pointer}
+@keyframes floatOrb{0%{transform:translate(0,0)scale(.8)}50%{transform:translate(-50px,-40px)scale(1.1)}100%{transform:translate(0,0)scale(.8)}}

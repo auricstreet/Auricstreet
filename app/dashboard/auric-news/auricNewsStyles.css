@@ -1,0 +1,283 @@
+/**********************************************
+   AURIC NEWS MATRIX — GOD TIER DESIGN SYSTEM
+   Premium Gold + Glass + Cinematic Motion
+**********************************************/
+
+/* Wrapper */
+.auric-news-wrapper {
+  width: 100%;
+  padding: 60px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+/* MAIN TITLE */
+.auric-news-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: white;
+  -webkit-background-clip: text;
+ 
+  margin-bottom: 30px;
+font-family: "Teko", sans-serif;
+letter-spacing: -1px;
+
+}
+
+/* SECTION TITLE */
+.auric-section-heading {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  padding-left: 8px;
+  letter-spacing: 1px;
+}
+
+
+
+/*************************************************
+   NEWS RAIL ANIMATION — RIGHT → LEFT CINEMATIC
+*************************************************/
+
+.news-rail-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 10px 0;
+}
+
+/* Track holding the cards */
+.news-rail-track {
+  display: flex;
+  gap: 22px;
+  animation: auricScroll 48s linear infinite;
+  will-change: transform;
+}
+
+/* Ultra slow movement */
+@keyframes auricScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/***********************************************
+   NEWS CARDS — GOLD GLASS PREMIUM COMPONENT
+***********************************************/
+
+.news-card {
+  min-width: 420px;
+  max-width: 420px;
+  padding: 22px;
+  border-radius: 18px;
+
+  /* Glass Frost */
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(16px);
+
+  /* Soft Gold Border */
+  border: 1px solid rgba(212, 175, 55, 0.25);
+
+  /* Shadow */
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.45),
+    0 0 24px rgba(212, 175, 55, 0.18);
+
+  /* Glow Transition */
+  transition: 0.35s ease, box-shadow 0.35s ease;
+  text-decoration: none;
+  color: white;
+}
+
+/* Hover glow */
+.news-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.65),
+    0 0 45px rgba(212, 175, 55, 0.55);
+  border-color: rgba(212, 175, 55, 0.55);
+}
+
+/* Title */
+.news-title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.45;
+  margin-bottom: 10px;
+}
+
+/* Publish time */
+.news-time {
+  font-size: 14px;
+  opacity: 0.65;
+}
+
+/***********************************************
+   MOBILE RESPONSIVE OPTIMIZATION
+***********************************************/
+
+@media (max-width: 700px) {
+
+  .news-rail-track {
+    animation: auricScroll 55s linear infinite;
+  }
+
+  .news-card {
+    min-width: 280px;
+    max-width: 280px;
+    padding: 16px;
+  }
+
+  .auric-section-heading {
+    font-size: 22px;
+  }
+
+  .auric-news-title {
+    font-size: 32px;
+  }
+}
+
+/**************************************************
+   SHIMMER PASS (OPTIONAL — LOOKS GOD-TIER)
+**************************************************/
+
+.news-card::after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 250%;
+  height: 250%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 215, 110, 0.18),
+    transparent
+  );
+  transform: rotate(20deg);
+  opacity: 0;
+  transition: opacity .4s ease;
+}
+
+.news-card:hover::after {
+  opacity: 1;
+}
+/**********************************************
+   ADVANCED ENHANCEMENTS — FLOW + MOTION
+**********************************************/
+
+/* Gold Divider Between Sections */
+.auric-section-block {
+  padding-bottom: 45px;
+  border-bottom: 1px solid rgba(255, 215, 55, 0.14);
+  position: relative;
+}
+
+/* Soft glowing connection dot */
+.auric-section-block::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #f4d56b, #d4af37);
+  box-shadow: 0px 0px 14px rgba(255, 230, 150, 0.75);
+}
+
+/* Remove last divider glow */
+.auric-section-block:last-child {
+  border-bottom: none;
+}
+.auric-section-block:last-child::after {
+  display: none;
+}
+
+
+/**********************************************
+   SECTION HEADING ANIMATION (Subtle Pulse)
+**********************************************/
+.auric-section-heading {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  animation: slowPulse 6s ease-in-out infinite;
+  opacity: 0.95;
+}
+
+@keyframes slowPulse {
+  0%, 100% { opacity: 0.85; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.03); }
+}
+
+
+/**********************************************
+   OPTIONAL CATEGORY TAG STYLE (Looks Pro)
+**********************************************/
+.auric-category-tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 12px;
+  margin-top: 4px;
+  color: black;
+  background: linear-gradient(90deg, #ffd95b, #e3b74d);
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+
+/**********************************************
+   SMOOTH FADE-IN LOADING (Cinematic Entry)
+**********************************************/
+.news-card {
+  opacity: 0;
+  animation: fadeRise 0.9s ease forwards;
+}
+
+.news-card:nth-child(1) { animation-delay: .1s; }
+.news-card:nth-child(2) { animation-delay: .2s; }
+.news-card:nth-child(3) { animation-delay: .35s; }
+.news-card:nth-child(4) { animation-delay: .5s; }
+.news-card:nth-child(5) { animation-delay: .65s; }
+
+@keyframes fadeRise {
+  0% { opacity: 0; transform: translateY(24px) scale(0.97); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+
+/**********************************************
+   MOBILE: DEEP ENHANCEMENT
+**********************************************/
+@media (max-width: 450px) {
+  .auric-section-block {
+    padding-bottom: 32px;
+  }
+
+  .auric-category-tag {
+    font-size: 10px;
+    padding: 4px 10px;
+  }
+
+  .news-card {
+    border-radius: 14px;
+  }
+}
+.auric-news-wrapper {
+  padding-top: 10px;
+}
+
+.auric-news-title {
+  margin-top: 0;
+  padding-top: 0;
+}

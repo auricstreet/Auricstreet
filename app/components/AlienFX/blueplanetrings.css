@@ -1,0 +1,118 @@
+.planet-rings-wrapper {
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* Planet sphere */
+.planet-core {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%,
+      rgba(90,160,255,0.9),
+      rgba(0,40,90,0.8) 40%,
+      rgba(0,10,30,1) 70%
+    );
+  box-shadow:
+    0 0 40px rgba(60,100,255,0.5),
+    0 0 80px rgba(40,80,255,0.25),
+    inset 0 0 30px rgba(0,80,255,0.4);
+
+  animation: planetPulse 5s ease-in-out infinite,
+             planetRotate 40s linear infinite;
+}
+
+/* Soft breathing */
+@keyframes planetPulse {
+  0% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.05); filter: brightness(1.15); }
+  100% { transform: scale(1); filter: brightness(1); }
+}
+
+/* Slow spin */
+@keyframes planetRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+/* ---------------------------- */
+/*  NEW ORBITING RINGS         */
+/* ---------------------------- */
+
+.planet-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 170%;
+  height: 170%;
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  transform: translate(-50%, -50%) rotateX(65deg);
+  border: 2px solid rgba(212,175,55,0.45);
+  box-shadow: 0 0 20px rgba(212,175,55,0.35);
+  
+  animation:
+    ringOrbit 22s linear infinite,
+    ringTilt 6s ease-in-out infinite;
+}
+
+/* Second ring (bigger + reverse orbit) */
+.ring2 {
+  width: 200%;
+  height: 200%;
+  border-color: rgba(255,230,140,0.5);
+  animation:
+    ringOrbit 30s linear infinite reverse,
+    ringTilt 7s ease-in-out infinite reverse;
+}
+
+/* Full 360° orbit around the planet */
+@keyframes ringOrbit {
+  from { transform: translate(-50%, -50%) rotateX(65deg) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotateX(65deg) rotate(360deg); }
+}
+
+/* Gentle tilt movement—looks alien & alive */
+@keyframes ringTilt {
+  0%   { transform: translate(-50%, -50%) rotateX(62deg) rotateY(0deg); }
+  50%  { transform: translate(-50%, -50%) rotateX(70deg) rotateY(4deg); }
+  100% { transform: translate(-50%, -50%) rotateX(62deg) rotateY(0deg); }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .planet-rings-wrapper {
+    top: 12%;
+  }
+}
+
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .planet-rings-wrapper {
+    top: -5%;
+    left: 50%;
+  }
+}
+
+
+/* Small Phones (iPhone SE, 12 Mini) */
+@media (max-width: 480px) {
+  .planet-rings-wrapper {
+    top: -6.5%; 
+    left: 50%; /* moves up */
+    transform: translate(-50%, 0);
+  }
+}
+
+
+/* Extra small screens */
+@media (max-width: 360px) {
+  .planet-rings-wrapper {
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}

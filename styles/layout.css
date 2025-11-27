@@ -1,0 +1,238 @@
+/* ===========================================
+   LAYOUT SYSTEM
+=========================================== */
+
+/* ---------- NAVBAR ---------- */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 26px;
+  background: rgba(8,12,20,0.55);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand img {
+  height: 40px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 26px;
+  font-family: var(--font-subheading);
+}
+
+.nav-link {
+  color: var(--color-text-muted);
+  font-weight: 600;
+  transition: .25s;
+}
+
+.nav-link:hover {
+  color: var(--color-gold);
+}
+
+/* Mobile Navbar */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+}
+
+
+/* ---------- HERO SECTION ---------- */
+
+.hero {
+  min-height: 86vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 26px;
+  gap: 36px;
+  position: relative;
+}
+
+.hero-gradient {
+  background: radial-gradient(circle at center, #182033 0%, #050911 100%);
+  width: 100%;
+  height: 100%;
+}
+
+.hero .left {
+  max-width: 620px;
+}
+
+.hero .sub {
+  color: var(--color-text-muted);
+  margin-top: 12px;
+  margin-bottom: 24px;
+}
+
+/* Hero Responsive */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 120px;
+  }
+  .hero .left {
+    max-width: 100%;
+  }
+}
+
+
+/* ---------- VALUE SECTION ---------- */
+
+.value-section {
+  position: relative;
+  padding: 80px 7%;
+  color: var(--color-text);
+  overflow: hidden;
+}
+
+.value-grid {
+  display: grid;
+  gap: 35px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media(max-width: 992px) {
+  .value-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media(max-width: 650px) {
+  .value-grid { grid-template-columns: 1fr; }
+}
+
+
+/* ---------- COMPARISON SECTION ---------- */
+
+.comparison-section {
+  padding: 110px 6%;
+  position: relative;
+}
+
+.comparison-list {
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+  align-items: center;
+}
+
+.comparison-card {
+  width: min(900px, 95%);
+  padding: 40px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(16px);
+  transition: .4s ease;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+@media (max-width: 768px) {
+  .comparison-card {
+    padding: 26px;
+  }
+}
+
+
+/* ---------- CURRICULUM TIMELINE ---------- */
+
+.timeline {
+  position: relative;
+  margin-top: 60px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, var(--color-gold), var(--color-gold-warm), transparent);
+  border-radius: 6px;
+}
+
+.timeline-card {
+  width: 48%;
+  padding: 26px;
+  margin-bottom: 60px;
+  border-radius: var(--radius-md);
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: var(--shadow-soft);
+}
+
+.timeline-card.left { margin-right: auto; }
+.timeline-card.right { margin-left: auto; }
+
+@media (max-width: 900px) {
+  .timeline::before { left: 8px; }
+  .timeline-card {
+    width: 100%;
+    margin-left: 0 !important;
+    padding-left: 38px;
+  }
+}
+
+
+/* ---------- CTA SECTION ---------- */
+
+.cta-section {
+  padding: 100px 26px;
+  text-align: center;
+}
+
+.cta-box {
+  padding: 80px 30px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 14px 50px rgba(0,0,0,0.55);
+}
+
+@media (max-width: 900px) {
+  .cta-box {
+    padding: 60px 20px;
+  }
+}
+
+
+/* ---------- FAQ ---------- */
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.faq-item {
+  border-radius: 14px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+
+/* ---------- CONTACT FORM ---------- */
+
+.contact-form {
+  max-width: 520px;
+  margin: 0 auto;
+  display: flex;
+  gap: 18px;
+  flex-direction: column;
+}

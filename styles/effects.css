@@ -1,0 +1,95 @@
+/* ===========================================
+   EFFECTS — Premium Visual Layer
+   (Full Mode Enabled)
+=========================================== */
+
+/* ---------- GLASS SURFACES ---------- */
+.glass-soft {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.glow-gold {
+  box-shadow: 0 0 22px var(--color-gold-soft);
+}
+
+
+/* ---------- FLOATING PARTICLES ---------- */
+
+.particle {
+  filter: drop-shadow(0 0 8px var(--color-gold-soft));
+  pointer-events: none;
+}
+
+/* ---------- FLOAT ORBS ---------- */
+
+.comparison-orbs {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.comparison-orbs .orb {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  opacity: .55;
+  background: radial-gradient(circle, var(--color-gold-soft), transparent);
+  animation: floatOrb 18s infinite ease-in-out;
+}
+
+
+/* ---------- CURSOR AURA ---------- */
+
+.cursor-orb {
+  position: fixed;
+  width: 260px;
+  height: 260px;
+  pointer-events:none;
+  border-radius:50%;
+  background: radial-gradient(circle, var(--color-gold-soft), transparent 75%);
+  filter: blur(85px);
+  opacity: .45;
+  transition: opacity .35s;
+  z-index: -1;
+}
+
+.cursor-orb.idle { opacity: .15; }
+
+
+/* ---------- ORB HALO (Hero FX) ---------- */
+
+.orb-halo-root {
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.orb-halo-outer {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 260px;
+  height: 260px;
+  transform: translate(-50%, -50%);
+  filter: blur(60px);
+  opacity: .85;
+  mix-blend-mode: screen;
+  background: radial-gradient(circle at 50% 40%, var(--color-gold-soft), transparent 70%);
+  animation: auric-aura-breathe 10s infinite ease-in-out;
+}
+
+.orb-halo-specular {
+  position: absolute;
+  left:50%;
+  top:50%;
+  width:200px;
+  height:200px;
+  transform:translate(-25%,-25%);
+  background: radial-gradient(circle, rgba(255,255,255,0.65), transparent 50%);
+  filter: blur(8px);
+  mix-blend-mode: screen;
+  animation: auric-specular-sway 9s infinite ease-in-out;
+}

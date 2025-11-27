@@ -1,0 +1,444 @@
+/* -------------------------------------------
+   🔥 AURIC DASHBOARD — CLEAN FINAL CSS
+------------------------------------------- */
+
+/* Navigation Glow */
+.auric-dashboard-link {
+  position: relative;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  padding-bottom: 4px;
+}
+.auric-dashboard-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, #C7A546, #D4AF37, #C7A546);
+  box-shadow: 0 0 12px rgba(212,175,55,0.55);
+  transition: width 0.28s ease-out;
+  border-radius: 10px;
+}
+.auric-dashboard-link:hover::after,
+.nav-active::after {
+  width: 100%;
+}
+.nav-active {
+  color: #D4AF37 !important;
+}
+
+
+/* -------------------------------------------
+   📌 Layout + Sections
+------------------------------------------- */
+/* HEADER Alignment */
+.dashboard-header {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+/* Terminal Row (2-Column layout) */
+.terminal-row {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 28px;
+  margin-bottom: 40px;
+}
+
+/* Panels */
+.terminal-panel {
+  background: rgba(255,255,255,0.04);
+  padding: 26px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 12px 44px rgba(0,0,0,0.40);
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.terminal-panel:hover {
+  border-color: rgba(212,175,55,0.25);
+  box-shadow: 0 0 24px rgba(212,175,55,0.22);
+}
+
+/* Placeholder panel text */
+.preview-placeholder {
+  opacity: 0.55;
+  color: #d6cfa6;
+  font-size: 14px;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* Full Width panels */
+.terminal-wide {
+  background: rgba(255,255,255,0.04);
+  padding: 26px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 12px 44px rgba(0,0,0,0.40);
+}
+
+/* Divider */
+.terminal-divider {
+  width: 100%;
+  height: 1px;
+  margin: 28px 0;
+  background: linear-gradient(90deg, transparent, rgba(212,175,55,0.4), transparent);
+}
+
+/* Titles */
+.terminal-title {
+  font-family: "Teko", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px) {
+  .terminal-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* -------------------------------------------
+   🧮 Inputs + Controls
+------------------------------------------- */
+/* Split Layout */
+.risk-container {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 26px;
+  margin-top: 20px;
+}
+.calc-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.6px;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  text-shadow: 0 0 12px rgba(212,175,55,0.45);
+  display: inline-block;
+  position: relative;
+ font-family: "Teko", sans-serif;
+}
+
+/* Soft underline glow */
+.calc-title::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 40%;
+  height: 2px;
+  background: linear-gradient(90deg, #d4af37, rgba(212,175,55,0.1));
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(212,175,55,0.5);
+  transition: width 0.4s ease;
+}
+
+/* Animated underline on hover */
+.calc-title:hover::after {
+  width: 100%;
+}
+
+/* Inputs Section */
+.risk-input-box {
+  background: rgba(255,255,255,0.03);
+  padding: 24px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(14px);
+}
+
+.calc-grid-2col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.full-span { grid-column: span 2; }
+
+.calc-input {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  padding: 10px 12px;
+  color: #eee;
+  font-size: 15px;
+  outline: none;
+  transition: box-shadow .3s ease, border .3s ease;
+}
+
+.calc-input:focus {
+  border: 1px solid rgba(212,175,55,0.35);
+  box-shadow: 0 0 12px rgba(212,175,55,0.35);
+}
+
+/* Results Section */
+.results-glass {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(212,175,55,0.25);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 12px 38px rgba(0,0,0,0.45);
+}
+
+.result-title {
+  font-size: 18px;
+  color: #D4AF37;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-shadow: 0 0 10px rgba(212,175,55,0.6);
+}
+
+.results-list p {
+  color: #eee;
+  font-size: 15px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.results-list span {
+  color: #D4AF37;
+  font-weight: 700;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  .risk-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* -------------------------------------------
+   ⚙️ Info Panel Toggle
+------------------------------------------- */
+
+.info-btn {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(212,175,55,0.25);
+  color: gold;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+.info-btn:hover {
+  box-shadow: 0 0 12px rgba(212,175,55,0.5);
+}
+.info-panel {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(212,175,55,0.15);
+  padding: 14px;
+  border-radius: 12px;
+  margin-top: 12px;
+  display: none;
+}
+
+.gold-btn {
+  background: linear-gradient(90deg, #c7a546, #d4af37, #c7a546);
+  color: #0b0f17;
+  font-weight: 700;
+  padding: 12px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  transition: all 0.35s ease;
+  border: 1px solid rgba(212,175,55,0.35);
+  box-shadow: 0 0 10px rgba(212,175,55,0.25),
+              inset 0 0 4px rgba(255,255,255,0.35);
+}
+
+.gold-btn:hover {
+  filter: brightness(1.18);
+  transform: translateY(-2px);
+  box-shadow: 0 0 22px rgba(212,175,55,0.55),
+              0 8px 18px rgba(0,0,0,0.45);
+}
+
+/* Active press effect */
+.gold-btn:active {
+  transform: scale(0.97);
+  filter: brightness(1);
+  box-shadow: 0 0 10px rgba(212,175,55,0.32);
+}
+
+/* Makes button span full width in grid */
+.full-span {
+  grid-column: span 2;
+  width: 100%;
+}
+.explain-list {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+  color: #ddd;
+  line-height: 1.5;
+}
+
+.explain-list li {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.explain-list li:first-child {
+  margin-top: 10px;
+}
+
+
+/* -------------------------------------------
+   🎭 Animations
+------------------------------------------- */
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes revealFade {
+  from { opacity: 0; filter: blur(12px); }
+  to { opacity: 1; filter: blur(0); }
+}
+
+
+/* -------------------------------------------
+   🪄 Z-Index Fix — Ensures components ABOVE effects
+------------------------------------------- */
+.auric-dashboard-bg { z-index: 0 !important; }
+.auric-particles { z-index: 1 !important; }
+.navbar { z-index: 999 !important; }
+.terminal-panel, .terminal-wide, .terminal-grid, .dashboard-title { z-index: 100 !important; }
+
+
+/* -------------------------------------------
+   📱 Responsive
+------------------------------------------- */
+@media (max-width: 940px) {
+  .terminal-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* -------------------------------------------
+   📱 RESPONSIVE IMPROVEMENTS (DO NOT TOUCH ORIGINAL DESIGN)
+------------------------------------------- */
+
+/* Tablet: keep two-column but tighten spacing */
+@media (max-width: 1024px) {
+  .terminal-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .terminal-panel,
+  .terminal-wide {
+    padding: 18px;
+  }
+
+  .calc-input {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+}
+
+/* Mobile: stack everything nicely */
+@media (max-width: 768px) {
+
+  .dashboard-header {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .terminal-row {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .terminal-panel, 
+  .terminal-wide {
+    padding: 20px;
+    margin-bottom: 12px;
+  }
+
+  /* Center the sphere on mobile */
+  .terminal-row .flex {
+    justify-content: center !important;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* Reduce sphere size on mobile */
+  .terminal-row canvas,
+  .terminal-row .auric-sphere,
+  .terminal-row .auric-planet {
+    transform: scale(0.75);
+  }
+
+  /* Form grids collapse */
+  .calc-grid-2col {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .full-span {
+    grid-column: span 1;
+  }
+}
+
+/* Small Mobile: tighten space further */
+@media (max-width: 480px) {
+
+  h1, .calc-title, .terminal-title {
+    font-size: 16px !important;
+  }
+
+  .terminal-panel,
+  .terminal-wide {
+    padding: 16px;
+  }
+
+  .calc-input {
+    font-size: 13px;
+    padding: 7px 8px;
+  }
+
+  .gold-btn {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  /* Shrink Quantum Sphere more */
+  .terminal-row canvas,
+  .terminal-row .auric-sphere {
+    transform: scale(0.6);
+    margin: 0 auto;
+  }
+}
+
+/* Ultra small devices */
+@media (max-width: 360px) {
+  .calc-input {
+    font-size: 12px;
+  }
+
+  .gold-btn {
+    font-size: 13px;
+  }
+}

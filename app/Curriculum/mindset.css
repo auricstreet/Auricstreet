@@ -71,6 +71,7 @@
 .result-title {
   font-size: 28px;
   margin-bottom: 30px;
+  color: #ffffff;
 }
 
 /* METER WRAPPER */
@@ -110,7 +111,7 @@
   position: absolute;
   inset: 0;
   border-radius: 999px;
-  background: conic-gradient(#D4AF37 calc(var(--p) * 1%), transparent 0);
+  background: #33df08;
   mask: radial-gradient(circle, transparent 60%, black 61%);
 }
 
@@ -118,7 +119,7 @@
 .meter-value {
   font-size: 42px;
   font-weight: 700;
-  color: var(--gold, #D4AF37);
+  color: var(--gold, #33df08);
 }
 
 /* MESSAGE */
@@ -133,11 +134,10 @@
 .result-cta {
   display: inline-block;
   padding: 14px 22px;
-  background: linear-gradient(90deg, #C7A546, #D4AF37);
+  background: #ffffff;
   color: #041016;
   border-radius: 12px;
   font-weight: 700;
-  box-shadow: 0 8px 26px rgba(212,175,55,0.4);
   transition: 0.25s ease;
 }
 
@@ -161,14 +161,20 @@
 }
 
 .curriculum-sub {
-  font-size: 17px;
+  font-size: 25px;
   opacity: 0.8;
   color: rgba(255, 255, 255, 0.6);
   margin-top: 8px;
   letter-spacing: 0.5px;
 }
+.curriculum-sub-span
+{
+  font-size: 30px;
+  color: #ffffff;
+  letter-spacing: 2px;
+}
 .auric-heading {
-  font-size: 2rem;
+  font-size: 4rem;
   text-align: center;
   font-weight: 700;
   color: #f5d78e;
@@ -215,3 +221,4 @@
     box-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
   }
 }
+

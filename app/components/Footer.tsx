@@ -3,7 +3,7 @@ import CosmicFog from "./CosmicFog";
 
 export default function Footer() {
   return (
-    <footer className="footer-container">
+    <footer className="footer-container bg-black">
       <CosmicBackground>
         <CosmicFog />
 
@@ -20,19 +20,19 @@ export default function Footer() {
             />
 
             <h3 className="footer-title gold-glow">
-              Auric Street – US Futures & Forex Trading Hub
+              Auric Street - US Futures & Forex Trading Hub
             </h3>
 
             <p className="footer-text">
               South India’s first premium trading hub teaching US Futures &
-              Forex with discipline, structure, and a 60-day funded trader
+              Forex with discipline, structure and a 60-day funded trader
               roadmap.
             </p>
           </div>
 
           <div className="footer-block">
             <h3 className="footer-subtitle">Contact</h3>
-            <p className="footer-text">📞 +91 8891551236</p>
+            <p className="footer-text">📞 +91 6282939341</p>
             <p className="footer-text">📧 auricstreet@gmail.com</p>
             <p className="footer-text">
     📍 Square 1 Building, 2nd Floor,<br />
@@ -41,9 +41,10 @@ export default function Footer() {
   </p>
              <div className="footer-social">
               <h3 className="footer-subtitle">Connect</h3>
-  <a href="https://instagram.com" target="_blank"><i className="fa-brands fa-instagram"></i></a>
-  <a href="https://wa.me/+918891551236" target="_blank"><i className="fa-brands fa-whatsapp"></i></a>
+  <a href="https://www.instagram.com/auricstreet?igsh=MWo5bjV2cjkzM2NteA==" target="_blank"><i className="fa-brands fa-instagram"></i></a>
+  <a href="https://wa.me/+916282939341" target="_blank"><i className="fa-brands fa-whatsapp"></i></a>
   <a href="https://facebook.com" target="_blank"><i className="fa-brands fa-facebook"></i></a>
+    <a href="https://discord.gg/jDkERK8mY" target="_blank"><i className="fa-brands fa-discord"></i></a>
 <a href="#" target="_blank"><i className="fa-brands fa-linkedin"></i></a>
   <a href="https://maps.google.com/?q=location" target="_blank"><i className="fa-solid fa-location-dot"></i></a>
 </div>
@@ -59,7 +60,6 @@ export default function Footer() {
     <a href="/contact" className="footer-nav">Contact</a>
 
   </div>
-           
 
           </div>
         </div>

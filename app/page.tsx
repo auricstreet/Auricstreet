@@ -1,3 +1,5 @@
+"use client";
+
 import { SessionMatrix } from "./components/SessionMatrix";
 import IlluminatiIntro from "./components/IlluminatiIntro";
 import Preloader from "./components/Preloader";
@@ -13,23 +15,22 @@ import FaqSection from "./components/sections/FaqSection";
 
 
 export default function Home() {
+
+
   return (
     <>
-     
+
       <IlluminatiIntro />
       <Preloader />
-
-
-<Hero />
-<SessionMatrix />
-<ValueSection />
-<ComparisonSection />
-<CurriculumSection  />
-<CtaSection />
-
-<FaqSection />
-
-
+      <Navbar />
+      <Hero />
+      <SessionMatrix />
+      <ValueSection />
+      <ComparisonSection />
+      <CurriculumSection />
+      <CtaSection />
+      <FaqSection />
+      <Footer />
     </>
   );
 }

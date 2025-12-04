@@ -16,6 +16,7 @@ export default function DashboardPage() {
     <>
     <div className="min-h-screen px-6 md:px-12 py-16 relative">
 
+<Navbar></Navbar>
 
       <AuricTicker />
       <CosmicBackground>
@@ -30,11 +31,11 @@ export default function DashboardPage() {
       {/* HEADER */}
       <div className="dashboard-header">
         <h1 className="text-4xl font-bold gold-gradient mb-2">
-          Auric Dashboard V1
+          AURIC DASHBOARD V1 
         </h1>
         
         <p className="text-gray-300 mb-12">
-          Your personal trading command center — live calculations, consistency metrics, and market intelligence.
+          Your personal trading command center for live calculations.
         </p>
       </div>
 
@@ -59,7 +60,7 @@ export default function DashboardPage() {
 
       {/* === TERMINAL ROW 2 — CONSISTENCY === */}
       <div className="terminal-wide">
-        <h2 className="terminal-title">Auric Consistency Rule Calculator ⚖️</h2>
+        <h2 className="terminal-title">Auric Consistency Rule Calculator </h2>
         <ConsistencyRule />
       </div>
 
@@ -68,12 +69,12 @@ export default function DashboardPage() {
 
       {/* === TERMINAL ROW 3 — NEWS === */}
       <div className="terminal-wide">
-        <h2 className="terminal-title">📰 Market News Intelligence</h2>
+        <h2 className="terminal-title">Live Market News</h2>
         <AuricNewsMatrix />
       </div>
 </CosmicBackground>
     </div>
-    
+    <Footer></Footer>
     </>
   );
 }

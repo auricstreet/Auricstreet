@@ -1,0 +1,257 @@
+/* RESET + BASE */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  background: #000;
+  font-family: "Poppins", sans-serif;
+}
+
+/* PAGE LAYOUT */
+.login-wrapper {
+  position: relative; /* FIXED */
+  width: 100%;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1f1f5e, #000);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* BACKGROUND LAYERS */
+.auric-login-bg {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0; /* FIXED */
+  background: radial-gradient(circle at 50% 20%, rgba(255,215,120,0.20), transparent 70%),
+              radial-gradient(circle at 80% 80%, rgba(255,200,100,0.10), transparent 75%),
+              #050505;
+}
+
+/* 🔹 1. Star Layer */
+.auric-stars {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, rgba(75, 32, 32, 0.4), transparent),
+    radial-gradient(1.5px 1.5px at 70% 60%, rgba(255,255,255,0.35), transparent),
+    radial-gradient(1.2px 1.2px at 40% 80%, rgba(255,255,255,0.25), transparent),
+    radial-gradient(1.8px 1.8px at 85% 20%, rgba(255,255,255,0.3), transparent);
+  animation: starFloat 18s linear infinite;
+  opacity:1;
+}
+
+/* 🔹 2. Nebula Fog */
+.auric-nebula {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(600px circle at 30% 70%, rgba(255,180,90,0.22), transparent 65%),
+              radial-gradient(600px circle at 70% 40%, rgba(255,255,255,0.12), transparent 70%);
+  filter: blur(70px);
+  animation: nebulaShift 22s ease-in-out infinite alternate;
+  opacity: 0.45;
+}
+
+/* 🔹 3. Spark Layer */
+.auric-spark-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(3px 3px at 10% 90%, rgb(255, 255, 255), transparent),
+    radial-gradient(3.5px 3.5px at 90% 20%, rgb(255, 255, 255), transparent),
+    radial-gradient(2px 2px at 60% 50%,  rgb(255, 255, 255), transparent);
+  animation: sparkDrift 12s ease-in-out infinite alternate;
+  opacity:1;
+}
+
+/* CINEMATIC HEADER */
+.cinematic-welcome {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 10; /* FIXED */
+  animation: fadeRise 1.2s ease forwards;
+}
+
+.auric-welcome-title {
+  font-size: 46px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #ffffff, #ffffff, #ffffff);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 
+      0 0 12px rgba(4, 0, 255, 0.55),
+      0 0 32px rgba(0, 4, 255, 0.35);
+  animation: shimmerText 4s ease-in-out infinite;
+}
+
+.auric-welcome-sub {
+  margin-top: 8px;
+  font-size: 19px;
+  opacity: 0.85;
+  color: #dcdcdc;
+}
+
+/* AURA GLOW */
+.cinematic-welcome::before {
+  content: "";
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 360px;
+  height: 160px;
+  background: radial-gradient(circle, rgba(39, 93, 194, 0.15), rgba(255, 255, 255, 0.05), transparent);
+  filter: blur(35px);
+  z-index: -1;
+  animation: auraFloat 6s ease-in-out infinite;
+}
+
+/* LOGIN CARD */
+.login-card {
+  width: 420px;
+  padding: 32px;
+  border-radius: 22px;
+  backdrop-filter: blur(18px) saturate(180%);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+  text-align: center;
+  position: relative;
+  z-index: 10; /* FIXED */
+  animation: floatIn 0.6s ease-out;
+  overflow: hidden;
+}
+
+/* GOLD LINE */
+.auric-gate {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  animation: gateFlow 4s infinite ease-in-out;
+  opacity: 0.7;
+}
+
+/* TEXT + INPUTS */
+.login-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.login-subtext {
+  color: #c9c9c9;
+  font-size: 0.85rem;
+}
+
+.login-input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 14px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: white;
+  outline: none;
+  transition: 0.25s;
+}
+
+.login-input:focus {
+  border-color: rgba(255, 215, 0, 0.9);
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
+}
+
+/* BUTTON */
+.login-btn {
+  width: 100%;
+  margin-top: 18px;
+  padding: 12px;
+  color: #ffffff;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #781bb6, #5a554c);
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #ebeaea, #810ac5);
+}
+
+.forgot-link {
+  display: block;
+  margin-top: 14px;
+  font-size: 0.8rem;
+  color: #d1d1d1;
+  text-decoration: underline;
+}
+
+/* ERROR MESSAGE */
+.error-text {
+  color: #ff6b6b;
+  font-size: 0.8rem;
+  margin-top: 10px;
+}
+
+/* ANIMATIONS */
+@keyframes floatIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes starFloat {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-40px); }
+}
+
+@keyframes nebulaShift {
+  0% { transform: translateX(-20px) translateY(10px); }
+  100% { transform: translateX(20px) translateY(-10px); }
+}
+
+@keyframes sparkDrift {
+  from { transform: translateY(0px) scale(1); }
+  to   { transform: translateY(-30px) scale(1.04); }
+}
+
+@keyframes gateFlow {
+  0% { transform: scaleX(0); opacity: 0; }
+  50% { transform: scaleX(1); opacity: 1; }
+  100% { transform: scaleX(0); opacity: 0; }
+}
+
+@keyframes fadeRise {
+  0% { opacity: 0; transform: translateY(35px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes auraFloat {
+  0%,100% { transform: translateX(-50%) translateY(0); }
+  50%     { transform: translateX(-50%) translateY(-12px); }
+}
+
+@keyframes shimmerText {
+  0%,100% {
+    text-shadow: 0 0 12px rgba(212,175,55,0.55), 
+                 0 0 32px rgba(255,255,255,0.35);
+  }
+  50% {
+    text-shadow: 0 0 22px rgba(212,175,55,0.95),
+                 0 0 42px rgba(255,255,255,0.45);
+  }
+}

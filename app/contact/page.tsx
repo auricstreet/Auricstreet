@@ -6,6 +6,9 @@ import Navbar from "../components/Navbar";
 import { AuricDust } from "../components/AuricDust";
 import Footer from "../components/Footer";
 import CosmicBackground from "../components/CosmicBackground";
+import CosmicBackgrounds from "../components/CosmicBackgrounds";
+import "./brochure.css";
+
 
 // Types for form fields
 type ContactFormElements = HTMLFormControlsCollection & {
@@ -23,6 +26,10 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
+    const modal = document.getElementById("brochureModal");
+    if (modal) {
+      modal.style.display = "flex";
+    }
 
     const form = e.currentTarget as HTMLFormElement & {
       elements: ContactFormElements;
@@ -60,11 +67,14 @@ export default function ContactPage() {
   return (
     <>
   
+  <Navbar></Navbar>
+  
     <AuricDust />
+        <CosmicBackgrounds></CosmicBackgrounds>
     <CosmicBackground>
-    <section className="container contact-page z-10 mt-[60px] mb-[120px]">
 
-      <h1 className="section-heading mb-8">Contact Us</h1>
+    <section className="container contact-page z-10 mt-[60px] mb-[120px]">
+      <h1 className="section-heading mb-8">CONTACT US </h1>
 
       <p className="contact-sub">
         Only 30 seats. We accept only serious learners who can give 200% effort.
@@ -126,6 +136,21 @@ export default function ContactPage() {
           </motion.div>
         )}
       </form>
+      {/* BROCHURE DOWNLOAD MODAL */}
+<div id="brochureModal" className="modal-hidden">
+  <div className="modal-box">
+    <h2>Your Brochure is Ready</h2>
+    <p>Thank you for reaching out! Download the Auric Street Brochure below.</p>
+
+    <a 
+      href="/Auric_street_Brochure.pdf"
+      download="Auric_Street_Brochure.pdf"
+      className="gold-download-btn"
+    >
+      Download Brochure 📄
+    </a>
+  </div>
+</div>
     </section>
     </CosmicBackground>
     

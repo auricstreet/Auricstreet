@@ -12,17 +12,17 @@ export default function SessionMatrix() {
   const sessions = useSessionData();
 
   return (
-    <section className="session-matrix-section">
+    <section className="session-matrix-section bg-black">
       <div className="relative">
         <CosmicOrbitLayer />
-        <BluePlanetRings size={300} />
+        <BluePlanetRings size={390} />
 
         {/* TITLE */}
         <h2 className="session-matrix-title">AURIC SESSION MATRIX</h2>
 
         {/* SUBTEXT */}
         <p className="session-matrix-sub">
-          Real-time global trading sessions with countdowns, volatility levels,
+          Real-time global trading sessions with countdowns, volatility levels
           and dynamic cosmic glow.
         </p>
 

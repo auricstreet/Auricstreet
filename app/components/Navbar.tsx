@@ -3,14 +3,15 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
+import CosmicBackgrounds from "./CosmicBackgrounds";
 
 const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/aboutPage" },
-  { name: "Auric Dashboard V1", href: "/dashboard" },
-  { name: "Curriculum", href: "/Curriculum" },
-  { name: "Student Login", href: "/faq" },
-  { name: "Contact", href: "/contact" },
+  { name: "HOME", href: "/" },
+  { name: "ABOUT", href: "/aboutPage" },
+  { name: "AURIC DASHBOARD V1", href: "/dashboard" },
+  { name: "CURRICULUM", href: "/Curriculum" },
+  { name: "STUDENT LOGIN", href: "/student-login" },
+  { name: "CONTACT", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -19,19 +20,18 @@ export default function Navbar() {
 
   return (
     <>
+     <CosmicBackgrounds></CosmicBackgrounds>
       {/* NAVBAR DESKTOP */}
-      <nav className="navbar">
-        <div className="brand flex items-center gap-3 cursor-pointer" onClick={() => (window.location.href = "/")}>
-  <img
- src="/logo.png"
-    alt="Auric Street"
-    className="nav-logo"
-  />
-  <span className="nav-brand-text">
-  AURIC STREET<span className="tm-mark">TM</span>
-</span>
-</div>
-
+      <nav className="navbar-lux">
+        <div
+          className="brand flex items-center gap-3 cursor-pointer"
+          onClick={() => (window.location.href = "/")}
+        >
+          <img src="/logo.png" alt="Auric Street" className="nav-logo" />
+          <span className="nav-brand-text">
+            AURIC STREET<span className="tm-mark">TM</span>
+          </span>
+        </div>
 
         <div className="nav-links">
           {navLinks.map((link) => (
@@ -53,7 +53,13 @@ export default function Navbar() {
             onClick={() => setOpen(true)}
             className="text-white/80 hover:text-white transition"
           >
-            <svg width="32" height="32" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
               <path d="M4 6h16M4 12h16M4 18h16" strokeLinecap="round" />
             </svg>
           </button>

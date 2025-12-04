@@ -6,7 +6,7 @@ import CosmicBackground from "../CosmicBackground";
 
 export default function CtaSection() {
   return (
-    <section className="cta-section container relative z-10 mt-[160px] mb-[120px] auric-spotlight">
+    <section className="cta-section container relative z-10 mt-[160px] mb-[120px] auric-spotlight bg-black">
      
       <AuricDust  />
        <CosmicBackground>
@@ -47,7 +47,7 @@ export default function CtaSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.25, duration: 0.8 }}
         >
-          Begin Your Second Chance
+          BEGIN YOUR SECOND CHANCE
         </motion.h2>
 
         <p className="cta-sub">
@@ -63,9 +63,10 @@ export default function CtaSection() {
           whileHover={{ scale: 1.08 }}
           whileTap={{ scale: 0.96 }}
         >
-          Contact Us →
+          Download Brochure →
         </motion.a>
       </motion.div>
+      
       </CosmicBackground>
     </section>
   );

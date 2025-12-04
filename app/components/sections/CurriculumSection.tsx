@@ -8,7 +8,7 @@ import CosmicBackground from "../CosmicBackground";
 
 const timeline = [
   {
-    phase: "Phase 1 — Foundations",
+    phase: "Phase 1 - Foundations",
     duration: "Days 1–10",
     points: [
       "Understanding US Futures & Forex",
@@ -19,7 +19,7 @@ const timeline = [
     ],
   },
   {
-    phase: "Phase 2 — ICT Basics",
+    phase: "Phase 2 - ICT Basics",
     duration: "Days 11–25",
     points: [
       "Market structure deeply explained",
@@ -30,7 +30,7 @@ const timeline = [
     ],
   },
   {
-    phase: "Phase 3 — Advanced ICT + Strategy",
+    phase: "Phase 3 - Advanced ICT + Strategy",
     duration: "Days 26–40",
     points: [
       "Power of 3 (accumulation, manipulation, distribution)",
@@ -38,10 +38,11 @@ const timeline = [
       "SMT, displacement, inefficiency",
       "Refinement based on sessions",
       "Entry model + Re-entry model",
+      "In Depth Bookmap Analysis"
     ],
   },
   {
-    phase: "Phase 4 — Backtesting & Discipline",
+    phase: "Phase 4 - Backtesting & Live Market Trading",
     duration: "Days 41–50",
     points: [
       "Building trading rules",
@@ -52,7 +53,7 @@ const timeline = [
     ],
   },
   {
-    phase: "Phase 5 — Funded Trader Preparation",
+    phase: "Phase 5 - Funded Trader Preparation",
     duration: "Days 51–60",
     points: [
       "Prop challenge-style environment",
@@ -66,7 +67,7 @@ const timeline = [
 
 export default function CurriculumSection() {
   return (
-    <section className="curriculum container relative z-10 mt-[120px] auric-spotlight">
+    <section className="curriculum container relative z-10 mt-[120px] auric-spotlight bg-black">
        <DimensionalTear />
             <AnomalyLight />
       <AuricDust  />

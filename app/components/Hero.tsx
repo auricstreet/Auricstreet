@@ -4,6 +4,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import RiftLayers from "./AuricRift/RiftLayers";
 import OrbHalo from "./AuricRift/OrbaHalo";
+import Footer from "./Footer";
+import CosmicBackgrounds from "./CosmicBackgrounds";
 
 type CSSVarStyle = React.CSSProperties & {
   [key: `--${string}`]: string;
@@ -15,7 +17,7 @@ export default function Hero() {
   );
 
   return (
-    <section className="relative min-h-screen flex items-center px-[7%] overflow-hidden select-none">
+    <section className="relative min-h-screen flex items-center px-[7%] overflow-hidden select-none bg-black">
       <div className="starfield">
         <div
           className="stars-layer"
@@ -51,10 +53,11 @@ export default function Hero() {
 <RiftLayers/>
   <OrbHalo size={500} />
       {/* ---- SUBTLE BACKGROUND LAYER ---- */}
+      
       <div className="absolute inset-0 opacity-[0.28] pointer-events-none">
         <div className="hero-gradient w-full h-full" />
       </div>
-
+     
       {/* ---- ENHANCED GOLDEN ORB ---- */}
       <motion.div
         className="orb-container absolute right-[8%] top-[20%]"
@@ -103,6 +106,7 @@ export default function Hero() {
 
       {/* ---- TEXT CONTENT ---- */}
       <div className="relative z-10 max-w-[650px]">
+        
      
         <motion.h1
           initial={{ opacity: 0, y: 18 }}
@@ -110,8 +114,8 @@ export default function Hero() {
           transition={{ duration: 0.9 }}
           className="text-5xl md:text-6xl font-bold leading-tight"
         >
-          Every Trader Deserves A{" "}
-          <span className="gold-gradient">Second Chance</span>
+          EVERY TRADER DESERVES A{" "}
+          <span className="gold-gradient">SECOND CHANCE</span>
         </motion.h1>
 
         <motion.p
@@ -130,7 +134,7 @@ export default function Hero() {
           transition={{ delay: 0.35, duration: 0.8 }}
         >
           Designed for serious learners and working professionals. A disciplined
-          pathway to become a consistently profitable — and eventually funded —
+          pathway to become a consistently profitable  and eventually funded 
           trader.
         </motion.p>
 
@@ -145,6 +149,7 @@ export default function Hero() {
           Begin Your Second Chance →
         </motion.a>
       </div>
+   
     </section>
   );
 }

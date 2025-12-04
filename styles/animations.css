@@ -81,3 +81,87 @@
   60% { transform: scale(3); opacity:.08; }
   100% { transform: scale(4); opacity:0; }
 }
+
+
+/* === animations.css ===
+   All keyframes + reusable animation classes
+   Add-only: safe to include globally
+*/
+
+/* global timing tokens */
+:root{
+  --auric-ease: cubic-bezier(.16,1,.3,1);
+  --auric-gold: #d4af37;
+  --auric-navy: #05060a;
+}
+
+/* --------- Base helpers --------- */
+.auric-hidden { opacity: 0; transform: translateY(12px) scale(0.998); }
+.auric-visible { opacity: 1; transform: none; transition: opacity .7s var(--auric-ease), transform .7s var(--auric-ease); }
+
+.auric-fade { animation: auricFade .9s var(--auric-ease) forwards; }
+@keyframes auricFade { from {opacity:0} to {opacity:1} }
+
+/* --------- Curtain + gold sweep --------- */
+.auric-curtain { background: var(--auric-navy); position:fixed; inset:0; z-index:9998; pointer-events:none; }
+.auric-goldsweep {
+  position:fixed; inset:0; z-index:9997; pointer-events:none;
+  background: linear-gradient(90deg, rgba(4,6,10,0) 0%, rgba(212,175,55,0.08) 30%, rgba(212,175,55,0.14) 50%, rgba(212,175,55,0.06) 70%, rgba(4,6,10,0) 100%);
+  transform: translateX(-105%);
+  will-change: transform; 
+  animation: auricSweep 0.9s var(--auric-ease) 0.32s forwards;
+}
+@keyframes auricSweep {
+  to { transform: translateX(105%); }
+}
+
+/* --------- Navbar slide down --------- */
+.auric-navbar-prepare { transform: translateY(-18px); opacity: 0; }
+.auric-navbar-in {
+  transform: translateY(0); opacity:1;
+  transition: transform .58s var(--auric-ease), opacity .58s var(--auric-ease);
+}
+.auric-navbar-underline {
+  position: relative;
+}
+.auric-navbar-underline::after{
+  content:""; position:absolute; left:8%; right:8%; bottom:-8px; height:2px; border-radius:2px;
+  background: linear-gradient(90deg, transparent, var(--auric-gold), transparent);
+  opacity:0; transform: scaleX(0); transform-origin:center;
+  transition: transform .9s var(--auric-ease), opacity .9s var(--auric-ease);
+}
+.auric-navbar-underline.active::after { opacity:1; transform: scaleX(1); }
+
+/* --------- Hero stagger (line by line) --------- */
+.auric-hero-line { display:block; opacity:0; transform: translateY(20px); }
+.auric-hero-line.in {
+  opacity:1; transform: translateY(0);
+  transition: transform 0.72s var(--auric-ease), opacity 0.72s var(--auric-ease);
+}
+
+/* helper for stagger delay via inline style or JS setTimeout */
+
+/* --------- Orb reveal (subtle) --------- */
+.auric-orb { opacity:0; transform: scale(.96); transition: opacity .95s var(--auric-ease), transform .95s var(--auric-ease); }
+.auric-orb.in { opacity:1; transform: scale(1); }
+
+/* --------- Side panel slide (Coca-style) --------- */
+.auric-panel-left, .auric-panel-right {
+  position: absolute; top:0; bottom:0; width:12%; background: linear-gradient(180deg, rgba(10,12,20,0.35), rgba(10,12,20,0.2));
+  transform: translateX(-100%); opacity:0; pointer-events:none;
+}
+.auric-panel-right { right:0; left:auto; transform: translateX(100%); }
+.auric-panels-in .auric-panel-left{ transform: translateX(0); opacity:0.14; transition: transform .62s var(--auric-ease), opacity .62s var(--auric-ease); }
+.auric-panels-in .auric-panel-right{ transform: translateX(0); opacity:0.12; transition: transform .62s var(--auric-ease), opacity .62s var(--auric-ease); }
+
+/* --------- Section scroll reveal (blur + rise) --------- */
+.auric-section { opacity:0; transform: translateY(28px); filter: blur(8px); transition: all .9s var(--auric-ease); }
+.auric-section.in { opacity:1; transform: translateY(0); filter: blur(0); }
+
+/* small stagger utility - can be applied inline via style --delay */
+.auric-delay { transition-delay: var(--auric-delay, 0ms); }
+
+/* reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .auric-curtain, .auric-goldsweep, .auric-navbar-in, .auric-hero-line, .auric-orb, .auric-panels-in, .auric-section { transition: none !important; animation: none !important; opacity:1; transform:none; filter:none; }
+}

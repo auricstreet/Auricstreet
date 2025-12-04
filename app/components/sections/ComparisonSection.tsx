@@ -3,16 +3,17 @@
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useEffect } from "react";
 import { AuricDust } from "../AuricDust";
+import CosmicBackgrounds from "../CosmicBackgrounds";
 
 const comparison = [
   {
     title: "US Futures",
     color: "gold-gradient",
     points: [
-      "✓ Highly liquid — clean chart movements",
+      "✓ Highly liquid - clean chart movements",
       "✓ 24-hour market, easier for working professionals",
       "✓ No manipulation like small Indian stocks",
-      "✓ Simple price action — easier to master",
+      "✓ Simple price action - easier to master",
       "✓ Moves with fundamentals & sentiment",
       "✓ Predictable volatility with sessions",
       "✓ Fewer traps compared to options",
@@ -37,11 +38,11 @@ const comparison = [
     title: "Forex (World's Largest Market)",
     color: "text-blue-400",
     points: [
-      "✓ $6.6 trillion liquidity — zero manipulation",
+      "✓ $6.6 trillion liquidity - zero manipulation",
       "✓ Perfect for consistency",
       "✓ High probability setups with discipline",
       "✓ Works beautifully with ICT concepts",
-      "✓ No Greeks — pure price action",
+      "✓ No Greeks - pure price action",
       "✓ Great for funded trader pathway",
     ],
   },
@@ -90,8 +91,9 @@ export default function ComparisonSection() {
 
 
   return (
-    <section className="comparison-section relative auric-spotlight">
+    <section className="comparison-section relative auric-spotlight bg-black">
 <AuricDust  />
+
       {/* Interactive glowing orb */}
       <motion.div
         className="cursor-orb"
@@ -107,10 +109,12 @@ export default function ComparisonSection() {
         <div className="orb" style={{ top: "55%", left: "18%" }}></div>
         <div className="orb gold" style={{ top: "30%", right: "6%" }}></div>
         <div className="orb" style={{ bottom: "10%", right: "20%" }}></div>
+     
       </div>
 
       {/* Heading */}
       <div className="comparison-heading">
+        
         <h2>Why US Futures & Forex Work Better Than Indian Markets</h2>
         <span className="heading-underline"></span>
       </div>
@@ -132,6 +136,7 @@ export default function ComparisonSection() {
             </ul>
           </motion.div>
         ))}
+        
       </div>
 
     </section>

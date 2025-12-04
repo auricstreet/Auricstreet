@@ -50,12 +50,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
       </head>
 
-      <body className="bg-[var(--navy)] text-white antialiased overflow-x-hidden">
+      <body className="bg-[var(--navy)] text-white antialiased overflow-x-hidden bg-black">
 
   {/* GLOBAL FX CONTAINER */}
-  <div className="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
+  <div className="fixed inset-0 -z-10 pointer-events-none overflow-hidden bg-black">
     <DarkMatterDust />
     <EclipsePass />
+    
   </div>
 
   {/* Client-side effects */}
@@ -64,10 +65,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   <TransitionProvider>
     <div id="preloader-root"></div>
-    <main className="relative z-10">
-      <Navbar></Navbar>
+    <main className="relative z-10 bg-black">
+      
+  
       {children}
-      <Footer></Footer>
+
       </main>
   </TransitionProvider>
 

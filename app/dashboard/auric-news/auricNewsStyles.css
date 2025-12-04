@@ -15,15 +15,15 @@
 /* MAIN TITLE */
 .auric-news-title {
   text-align: center;
-  font-size: 42px;
+  font-size: 50px;
   font-weight: 800;
-  letter-spacing: 2px;
+  letter-spacing: 5px;
   color: white;
   -webkit-background-clip: text;
  
   margin-bottom: 30px;
 font-family: "Teko", sans-serif;
-letter-spacing: -1px;
+
 
 }
 

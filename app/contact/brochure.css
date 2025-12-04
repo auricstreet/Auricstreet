@@ -1,0 +1,44 @@
+.modal-hidden {
+  position: fixed;
+  inset: 0;
+  display: none;
+  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+}
+
+.modal-box {
+  background: rgba(30,30,30,0.8);
+  padding: 30px 40px;
+  border-radius: 14px;
+  width: 90%;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(255,215,128,0.25);
+  animation: scaleIn 0.4s ease forwards;
+}
+
+@keyframes scaleIn {
+  0% { transform: scale(0.85); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.gold-download-btn {
+  display: inline-block;
+  margin-top: 18px;
+  background: linear-gradient(135deg,#f7e9bd,#e9c375);
+  padding: 14px 30px;
+  font-weight: 700;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #000;
+  perspective: 600px;
+  box-shadow: 0 0 18px rgba(255,225,160,0.55);
+  transition: 0.2s ease;
+}
+
+.gold-download-btn:hover {
+  transform: rotateX(12deg) rotateY(6deg) scale(1.03);
+  box-shadow: 0 0 22px rgba(255,225,160,0.75);
+}

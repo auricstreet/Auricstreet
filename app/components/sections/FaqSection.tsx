@@ -21,11 +21,11 @@ const faqs = [
   },
   {
     q: "Do we teach option buying or Indian stock market?",
-    a: "No. We avoid retail traps like option buying. We focus on US Futures & Forex — cleaner, structured, and easier for working professionals."
+    a: "No. We avoid retail traps like option buying. We focus on US Futures & Forex - cleaner, structured and easier for working professionals."
   },
   {
     q: "Is this a scam? Will I really make money?",
-    a: "We don’t promise money. We promise discipline, structure, real education, and a transparent path to become a funded trader if you follow the rules."
+    a: "We don’t promise money. We promise discipline, structure, real education and a transparent path to become a funded trader if you follow the rules."
   },
   {
     q: "Why only 30 students per batch?",
@@ -46,7 +46,7 @@ export default function FaqSection() {
 
   return (
     <CosmicBackground>
-    <section className="faq-section container relative z-10 mt-[140px]auric-light ">
+    <section className="faq-section container relative z-10 mt-[140px]auric-light bg-black">
   <AuricDust  />
   
       <h2 className="section-heading mb-10">Frequently Asked Questions</h2>

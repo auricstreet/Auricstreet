@@ -71,11 +71,11 @@ export default function MindsetTest() {
           {/* Result message */}
           <p className="result-msg">
             {percentage >= 80
-              ? "Elite Mindset — You think like a long-term trader."
+              ? "Elite Mindset - You think like a long-term trader."
               : percentage >= 60
               ? "Strong Mindset — With guidance, you’ll perform well."
               : percentage >= 40
-              ? "Developing Mindset — You’re improving, stay consistent."
+              ? "Developing Mindset - You’re improving, stay consistent."
               : "Emotional Zone — You need structure, discipline and coaching."}
           </p>
 

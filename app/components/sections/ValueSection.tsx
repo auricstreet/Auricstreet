@@ -12,14 +12,14 @@ const values = [
   },
   {
     title: "Every Trader Deserves a Second Chance",
-    desc: "Whether you lost money, got scammed, or feel stuck — we rebuild traders from zero with discipline.",
+    desc: "Whether you lost money, got scammed or feel stuck, we rebuild traders from zero with discipline.",
   },
   {
     title: "We Only Take 30 Serious Students",
     desc: "We prefer quality over quantity. Only those who can dedicate 200% effort for 60 days are accepted.",
   },
   {
-    title: "No Sales Team — Only Traders Teaching You",
+    title: "No Sales Team - Only Traders Teaching You",
     desc: "Every team member is a trader or actively learning. No calling. No forcing. No gimmicks.",
   },
   {
@@ -30,7 +30,7 @@ const values = [
 
 export default function ValueSection() {
   return (
-    <section className="value-section relative">
+    <section className="value-section relative bg-black">
         {/* SECTION-ONLY ALIEN EFFECTS */}
       <DimensionalTear />
       <AnomalyLight />

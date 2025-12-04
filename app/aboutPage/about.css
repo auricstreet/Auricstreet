@@ -1,0 +1,231 @@
+/* PAGE WRAPPER */
+.pageWrapper {
+
+  background: #01040a;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* LIMIT WIDTH + CENTER CONTENT */
+.contentContainer {
+  max-width: 1300px;         /* Increased for left+right layout */
+  margin: 0 auto;
+  padding: 120px 50px;
+  position: relative;
+  z-index: 5;
+}
+
+/* GRID WRAPPER — TWO COLUMNS */
+.gridWrapper {
+  display: grid;
+  grid-template-columns: 1fr 420px;  /* Left text | Right planet */
+  gap: 60px;
+  align-items: start;
+}
+
+/* LEFT (TEXT) */
+.leftContent {
+  max-width: 900px;
+}
+
+/* RIGHT (PLANET) */
+.rightContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 120px;
+}
+
+/* MAIN HEADING */
+.heading {
+ font-family: "SF Pro Display", "Inter", sans-serif;
+  font-size: 56px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  line-height: 1.15;
+  margin-bottom: 40px;
+  color: #ffffff;
+  text-shadow: 0 0 18px rgba(255,255,255,0.08);
+}
+
+/* PARAGRAPH */
+.paragraph {
+font-size: 30px;
+  line-height: 1.75;
+  font-weight: 300;
+  color: #dcdcdc;
+  margin-bottom: 20px;
+  max-width: 850px;
+}
+
+/* Bold formatting for ❌ & ✔ lines */
+.paragraph:has(❌),
+.paragraph:has(✔) {
+ font-size: 20px;
+  line-height: 1.7;
+  color: #e2e2e2;
+  margin-bottom: 8px;
+}
+.signature {
+  font-size: 40px;
+  color: #ffffff;
+  opacity: 0.75;
+  margin-top: 40px;
+  font-weight: 300;
+}
+/* DIVIDER */
+.divider {
+  opacity: 0.3;
+  margin: 40px 0;
+  letter-spacing: 10px;
+}
+/* PLANET CONTAINER */
+.planetContainer {
+  position: relative;
+  width: 360px;
+  height: 360px;
+  transform-style: preserve-3d;
+  animation: planetTilt 12s ease-in-out infinite alternate;
+}
+
+/* Planet tilt */
+@keyframes planetTilt {
+  0% { transform: rotateX(14deg) rotateY(-6deg); }
+  100% { transform: rotateX(16deg) rotateY(6deg); }
+}
+
+.planetCore {
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(255,255,255,0.25) 0px,
+      rgba(255,255,255,0.28) 3px,
+      rgba(255,255,255,0.05) 6px
+    ),
+    radial-gradient(circle at 30% 30%, #ffffff, #b7bcc6 60%, #777d87 100%);
+  box-shadow:
+    0 0 40px rgba(255,255,255,0.15),
+    inset 0 0 60px rgba(255,255,255,0.2);
+  animation: planetSpin 38s linear infinite;
+}
+
+/* Planet spin */
+@keyframes planetSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+.planetRing {
+  position: absolute;
+  border-radius: 50%;
+  mix-blend-mode: screen;
+  transform-origin: center;
+}
+
+/* Rings */
+.ring1 {
+  left: -40px;
+  position: absolute;
+  top: 140px;
+  width: 440px;
+  height: 120px;
+  border: 5px solid rgb(255, 255, 255);
+  animation: ringSpin 18s linear infinite;
+}
+
+.ring2 {
+  position: absolute;
+  left: -40px;
+  top: 140px;
+  width: 440px;
+  height: 120px;
+  border: 5px solid rgb(255, 255, 255); /* visible */
+  transform: scale(1.06);
+  z-index: 3;
+  animation: ringSpin 24s linear infinite;
+}
+
+.ring3 {
+  position: absolute;
+  left: -40px;
+  top: 140px;
+  width: 440px;
+  height: 120px;
+  border: 5px solid rgb(255, 255, 255);
+  transform: scale(1.12);
+  z-index: 2;
+  animation: ringSpin 30s linear infinite;
+}
+
+
+/* Ring spin */
+@keyframes ringSpin {
+  0% { transform: rotateZ(0deg) rotateX(64deg); }
+  100% { transform: rotateZ(360deg) rotateX(64deg); }
+}
+
+
+/* RESPONSIVE — MOBILE FIXES */
+@media (max-width: 980px) {
+  .gridWrapper {
+    grid-template-columns: 1fr;   /* Single column */
+    gap: 40px;
+  }
+
+  .rightContent {
+    justify-content: center;
+  }
+
+  .heading {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  .paragraph {
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .planetContainer {
+    width: 260px;
+    height: 260px;
+  }
+
+  .planetCore {
+    width: 260px;
+    height: 260px;
+  }
+
+  .ring1, .ring2, .ring3 {
+    width: 320px;
+    height: 80px;
+  }
+}
+/* APPLE-STYLE FADE-IN */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInSmooth 1.2s ease forwards;
+}
+
+@keyframes fadeInSmooth {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+

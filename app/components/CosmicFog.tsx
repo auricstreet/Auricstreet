@@ -38,12 +38,12 @@ export default function CosmicOrbitLayer() {
 
       {/* Slow rotating orbit circles */}
       <motion.div
-        className="absolute left-1/2 top-1/2 w-[140vh] h-[140vh] -translate-x-[50%] -translate-y-[50%] opacity-[0.18]"
+        className="absolute left-1/2 top-1/2 w-[140vh] h-[140vh] -translate-x-1/2 -translate-y-1/2 opacity-[0.18]"
         animate={{ rotate: 360 }}
         transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
       >
         <svg width="100%" height="100%">
-          {orbitParticles.map((p: { cx: unknown; cy: unknown; size: string | number | undefined; }, i: Key | null | undefined) => (
+          {orbitParticles.map((p, i) => (
             <circle
               key={i}
               cx={`calc(50% + ${p.cx}px)`}

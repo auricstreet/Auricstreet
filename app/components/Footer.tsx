@@ -66,8 +66,8 @@ export default function Footer() {
 
         <div className="footer-credit">
           Made with ❤️ by{" "}
-          <span className="gold-gradient font-bold">Abiii</span> &{" "}
-          <span className="gold-gradient font-bold ml-1">Dohnuss</span>
+          <span className="gold-gradient font-bold">Abijith</span>  {/* &{" "}
+         <span className="gold-gradient font-bold ml-1">Dohnuss</span> */}
         </div>
       </CosmicBackground>
     </footer>

@@ -63,12 +63,12 @@ export default function Footer() {
 
           </div>
         </div>
-
+      {/* ⭐ LOGO HERE 
         <div className="footer-credit">
           Made with ❤️ by{" "}
-          <span className="gold-gradient font-bold">Abijith</span>  {/* &{" "}
-         <span className="gold-gradient font-bold ml-1">Dohnuss</span> */}
+          <span className="gold-gradient font-bold">Abijith</span> 
         </div>
+        */}
       </CosmicBackground>
     </footer>
   );
